@@ -30,7 +30,16 @@
 				<tr>
 					<td><f:link.action action="show" arguments="{car : car}"> {car.vin}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{car : car}"> {car.color}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{car : car}"> {car.images}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{car : car}">
+						<f:if condition="{car.images}">
+							<f:then>
+								<f:image image="{car.images.0}" maxWidth="50"></f:image>
+							</f:then>
+							<f:else>
+								<div style="width:50px;height:50px;background:#ccc"></div>
+							</f:else>
+						</f:if>
+					</f:link.action></td>
 					<td><f:link.action action="edit" arguments="{car : car}">Edit</f:link.action></td>
 					<td><f:link.action action="delete" arguments="{car : car}">Delete</f:link.action></td>
 				</tr>
