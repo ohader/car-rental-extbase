@@ -8,7 +8,8 @@ call_user_func(
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
             'HofUniversityIndie.CarRental',
             'Information',
-            'Information'
+            'Information',
+            'car_rental-plugin-information'
         );
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('car_rental', 'Configuration/TypoScript', 'Car Rental');
