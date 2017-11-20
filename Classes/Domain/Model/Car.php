@@ -34,6 +34,14 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $color = '';
 
     /**
+     * Images
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @cascade remove
+     */
+    protected $images = null;
+
+    /**
      * brand
      *
      * @var \HofUniversityIndie\CarRental\Domain\Model\Brand
@@ -47,6 +55,14 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @cascade remove
      */
     protected $tires = null;
+
+    /**
+     * rentals
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\HofUniversityIndie\CarRental\Domain\Model\Rental>
+     * @cascade remove
+     */
+    protected $rentals = null;
 
     /**
      * __construct
@@ -67,7 +83,9 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected function initStorageObjects()
     {
+        $this->images = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->tires = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->rentals = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
@@ -110,6 +128,49 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setColor($color)
     {
         $this->color = $color;
+    }
+
+    /**
+     * Adds a FileReference
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     * @return void
+     */
+    public function addImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
+    {
+        $this->images->attach($image);
+    }
+
+    /**
+     * Removes a FileReference
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $imageToRemove The FileReference to be removed
+     * @return void
+     */
+    public function removeImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $imageToRemove)
+    {
+        $this->images->detach($imageToRemove);
+    }
+
+    /**
+     * Returns the images
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $images
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    /**
+     * Sets the images
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $images
+     * @return void
+     */
+    public function setImages(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $images)
+    {
+        $this->images = $images;
     }
 
     /**
@@ -174,5 +235,48 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setTires(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tires)
     {
         $this->tires = $tires;
+    }
+
+    /**
+     * Adds a Rental
+     *
+     * @param \HofUniversityIndie\CarRental\Domain\Model\Rental $rental
+     * @return void
+     */
+    public function addRental(\HofUniversityIndie\CarRental\Domain\Model\Rental $rental)
+    {
+        $this->rentals->attach($rental);
+    }
+
+    /**
+     * Removes a Rental
+     *
+     * @param \HofUniversityIndie\CarRental\Domain\Model\Rental $rentalToRemove The Rental to be removed
+     * @return void
+     */
+    public function removeRental(\HofUniversityIndie\CarRental\Domain\Model\Rental $rentalToRemove)
+    {
+        $this->rentals->detach($rentalToRemove);
+    }
+
+    /**
+     * Returns the rentals
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\HofUniversityIndie\CarRental\Domain\Model\Rental> $rentals
+     */
+    public function getRentals()
+    {
+        return $this->rentals;
+    }
+
+    /**
+     * Sets the rentals
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\HofUniversityIndie\CarRental\Domain\Model\Rental> $rentals
+     * @return void
+     */
+    public function setRentals(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $rentals)
+    {
+        $this->rentals = $rentals;
     }
 }

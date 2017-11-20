@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2017-11-20T16:27:40Z" product-name="car_rental">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-11-20T18:23:50Z" product-name="car_rental">
 		<header/>
 		<body>
 			<trans-unit id="vin.description">
@@ -9,11 +9,17 @@
 			<trans-unit id="color.description">
 				<source>Color</source>
 			</trans-unit>
+			<trans-unit id="images.description">
+				<source>Images</source>
+			</trans-unit>
 			<trans-unit id="brand.description">
 				<source>brand</source>
 			</trans-unit>
 			<trans-unit id="tires.description">
 				<source>tires</source>
+			</trans-unit>
+			<trans-unit id="rentals.description">
+				<source>rentals</source>
 			</trans-unit>
 		</body>
 	</file>

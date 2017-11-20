@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-11-20T18:23:50Z" product-name="car_rental">
+		<header/>
+		<body>
+			<trans-unit id="start_date.description">
+				<source>Start date</source>
+			</trans-unit>
+			<trans-unit id="end_date.description">
+				<source>End date</source>
+			</trans-unit>
+			<trans-unit id="return_date.description">
+				<source>returnDate</source>
+			</trans-unit>
+			<trans-unit id="customer.description">
+				<source>customer</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

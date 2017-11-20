@@ -22,5 +22,11 @@ call_user_func(
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_carrental_domain_model_tire', 'EXT:car_rental/Resources/Private/Language/locallang_csh_tx_carrental_domain_model_tire.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_carrental_domain_model_tire');
 
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_carrental_domain_model_rental', 'EXT:car_rental/Resources/Private/Language/locallang_csh_tx_carrental_domain_model_rental.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_carrental_domain_model_rental');
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_carrental_domain_model_customer', 'EXT:car_rental/Resources/Private/Language/locallang_csh_tx_carrental_domain_model_customer.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_carrental_domain_model_customer');
+
     }
 );
