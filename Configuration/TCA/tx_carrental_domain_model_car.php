@@ -185,17 +185,10 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_car.brand',
             'config' => [
-                'type' => 'inline',
+                'type' => 'select',
                 'foreign_table' => 'tx_carrental_domain_model_brand',
                 'minitems' => 0,
                 'maxitems' => 1,
-                'appearance' => [
-                    'collapseAll' => 0,
-                    'levelLinksPosition' => 'top',
-                    'showSynchronizationLink' => 1,
-                    'showPossibleLocalizationRecords' => 1,
-                    'showAllLocalizationLink' => 1
-                ],
             ],
         ],
         'tires' => [
