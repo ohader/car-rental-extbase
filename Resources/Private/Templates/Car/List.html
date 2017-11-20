@@ -1,0 +1,40 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+
+	This Template is responsible for creating a table of domain objects.
+
+	If you modify this template, do not forget to change the overwrite settings
+	in /Configuration/ExtensionBuilder/settings.yaml:
+	  Resources:
+		Private:
+		  Templates:
+			List.html: keep
+
+	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+	<f:section name="content">
+		<h1>Listing for Car</h1>
+
+		<f:flashMessages />
+
+		<table  class="tx_carrental" >
+			<tr>
+				<th><f:translate key="tx_carrental_domain_model_car.vin" /></th>
+				<th><f:translate key="tx_carrental_domain_model_car.color" /></th>
+				<th> </th>
+				<th> </th>
+			</tr>
+
+			<f:for each="{cars}" as="car">
+				<tr>
+					<td><f:link.action action="show" arguments="{car : car}"> {car.vin}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{car : car}"> {car.color}</f:link.action></td>
+					<td><f:link.action action="edit" arguments="{car : car}">Edit</f:link.action></td>
+					<td><f:link.action action="delete" arguments="{car : car}">Delete</f:link.action></td>
+				</tr>
+			</f:for>
+		</table>
+
+		<f:link.action action="new">New Car</f:link.action>
+	</f:section>
+</html>

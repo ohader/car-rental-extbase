@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-11-20T16:27:40Z" product-name="car_rental">
+		<header/>
+		<body>
+			<trans-unit id="tread_depth.description">
+				<source>Tread Depth</source>
+			</trans-unit>
+			<trans-unit id="pressure.description">
+				<source>Pressure (bar)</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

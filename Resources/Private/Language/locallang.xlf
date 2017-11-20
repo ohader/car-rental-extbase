@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-11-20T16:27:40Z" product-name="car_rental">
+		<header/>
+		<body>
+			<trans-unit id="tx_carrental_domain_model_brand">
+				<source>Brand</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_brand.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_car">
+				<source>Car</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_car.vin">
+				<source>Vin</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_car.color">
+				<source>Color</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_car.brand">
+				<source>Brand</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_car.tires">
+				<source>Tires</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_tire">
+				<source>Tire</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_tire.tread_depth">
+				<source>Tread Depth</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_tire.pressure">
+				<source>Pressure</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
