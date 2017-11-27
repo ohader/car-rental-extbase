@@ -20,11 +20,11 @@ call_user_func(
             'HofUniversityIndie.CarRental',
             'Management',
             [
-                'Management' => 'list, show'
+                'Management' => 'list, show, edit, update, delete, status'
             ],
             // non-cacheable actions
             [
-                'Management' => ''
+                'Management' => 'edit, update, delete, status'
             ]
         );
 

@@ -13,6 +13,8 @@ use HofUniversityIndie\CarRental\Domain\Model\Car;
 use HofUniversityIndie\CarRental\Domain\Repository\BrandRepository;
 use HofUniversityIndie\CarRental\Domain\Repository\CarRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
+use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 class ManagementController extends ActionController
 {
@@ -68,5 +70,71 @@ class ManagementController extends ActionController
     public function showAction(Car $car)
     {
         $this->view->assign('car', $car);
+    }
+
+    /**
+     * @param Car $car
+     */
+    public function editAction(Car $car)
+    {
+        $brands = $this->brandRepository->findAll();
+        $this->view->assign('brands', $brands);
+        $this->view->assign('car', $car);
+    }
+
+    /**
+     * @param Car $car
+     */
+    public function updateAction(Car $car)
+    {
+        $this->carRepository->update($car);
+        $this->addFlashMessage(
+            LocalizationUtility::translate(
+                'ManagementController.carUpdated',
+                $this->extensionName
+            )
+        );
+        $this->registerCacheUpdate();
+        $this->redirect('status');
+    }
+
+    public function deleteAction(Car $car)
+    {
+        $this->carRepository->remove($car);
+        $this->addFlashMessage(
+            LocalizationUtility::translate(
+                'ManagementController.carUpdated',
+                $this->extensionName
+            )
+        );
+        $this->registerCacheUpdate();
+        $this->redirect('status');
+    }
+
+    public function statusAction()
+    {
+    }
+
+    /**
+     * Registers cache update for current frontend page id.
+     *
+     * Alternative:
+     * In TYPO3 Backend in Page TSconfig define
+     * `TCEMAIN.clearCacheCmd = <frontend page id>`
+     * in storage folder of car records
+     */
+    private function registerCacheUpdate()
+    {
+        $this->cacheService->getPageIdStack()->push(
+            $this->getFrontendController()->id
+        );
+    }
+
+    /**
+     * @return TypoScriptFrontendController
+     */
+    private function getFrontendController()
+    {
+        return $GLOBALS['TSFE'];
     }
 }

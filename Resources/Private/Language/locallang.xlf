@@ -66,6 +66,13 @@
 			<trans-unit id="tx_carrental_domain_model_customer.last_name">
 				<source>Last Name</source>
 			</trans-unit>
+
+			<trans-unit id="ManagementController.carUpdated">
+				<source>The car has been updated</source>
+			</trans-unit>
+			<trans-unit id="ManagementController.carDeleted">
+				<source>The car has been deleted</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
