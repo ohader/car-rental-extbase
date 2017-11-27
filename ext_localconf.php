@@ -4,7 +4,7 @@ defined('TYPO3_MODE') || die('Access denied.');
 call_user_func(
     function()
     {
-
+        // configure Extbase plugin, used to control MVC dispatcher logic
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'HofUniversityIndie.CarRental',
             'Information',
@@ -17,7 +17,7 @@ call_user_func(
             ]
         );
 
-        // wizards
+        // add dedicated visualization in backend when "adding new content element"
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
             'mod {
                 wizards.newContentElement.wizardItems.plugins {
@@ -37,6 +37,7 @@ call_user_func(
            }'
         );
 
+        // register different icons for different plugin-types, shown in backend
         $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
         $iconRegistry->registerIcon(
             'car_rental-plugin-information',
