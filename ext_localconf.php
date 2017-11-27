@@ -16,6 +16,17 @@ call_user_func(
                 'Car' => ''
             ]
         );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'HofUniversityIndie.CarRental',
+            'Management',
+            [
+                'Management' => 'list, show'
+            ],
+            // non-cacheable actions
+            [
+                'Management' => ''
+            ]
+        );
 
         // add dedicated visualization in backend when "adding new content element"
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
@@ -31,6 +42,15 @@ call_user_func(
                                 list_type = carrental_information
                             }
                         }
+                        management {
+                            iconIdentifier = car_rental-plugin-management
+                            title = LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_car_rental_management.name
+                            description = LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_car_rental_management.description
+                            tt_content_defValues {
+                                CType = list
+                                list_type = carrental_management
+                            }
+                        }
                     }
                     show = *
                 }
@@ -43,6 +63,11 @@ call_user_func(
             'car_rental-plugin-information',
             \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
             ['source' => 'EXT:car_rental/Resources/Public/Icons/user_plugin_information.svg']
+        );
+        $iconRegistry->registerIcon(
+            'car_rental-plugin-management',
+            \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+            ['source' => 'EXT:car_rental/Resources/Public/Icons/user_plugin_management.svg']
         );
     }
 );

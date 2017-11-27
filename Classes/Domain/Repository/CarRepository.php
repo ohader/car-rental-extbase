@@ -17,4 +17,4 @@ namespace HofUniversityIndie\CarRental\Domain\Repository;
  */
 class CarRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-    }
+}

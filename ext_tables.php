@@ -15,6 +15,12 @@ call_user_func(
             'Information',
             'car_rental-plugin-information'
         );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'HofUniversityIndie.CarRental',
+            'Management',
+            'Management',
+            'car_rental-plugin-management'
+        );
 
         // Add TypoScript static template for frontend rendering
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('car_rental', 'Configuration/TypoScript', 'Car Rental');
