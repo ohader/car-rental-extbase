@@ -8,7 +8,9 @@ namespace HofUniversityIndie\CarRental\Controller;
  * LICENSE.txt file that was distributed with this source code.
  ***/
 
+use HofUniversityIndie\CarRental\Domain\Model\Brand;
 use HofUniversityIndie\CarRental\Domain\Model\Car;
+use HofUniversityIndie\CarRental\Domain\Repository\BrandRepository;
 use HofUniversityIndie\CarRental\Domain\Repository\CarRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
@@ -17,7 +19,12 @@ class ManagementController extends ActionController
     /**
      * @var CarRepository
      */
-    protected $carRepository = null;
+    protected $carRepository;
+
+    /**
+     * @var BrandRepository
+     */
+    protected $brandRepository;
 
     /**
      * @param CarRepository $carRepository
@@ -27,13 +34,30 @@ class ManagementController extends ActionController
         $this->carRepository = $carRepository;
     }
 
+    /**
+     * @param BrandRepository $brandRepository
+     */
+    public function injectBrandRepository(BrandRepository $brandRepository)
+    {
+        $this->brandRepository = $brandRepository;
+    }
 
     /**
+     * @param Brand $selectedBrand
      * @return void
      */
-    public function listAction()
+    public function listAction(Brand $selectedBrand = null)
     {
-        $cars = $this->carRepository->findAll();
+        $brands = $this->brandRepository->findAll();
+
+        if ($selectedBrand === null) {
+            $cars = $this->carRepository->findAll();
+        } else {
+            $cars = $this->carRepository->findByBrand($selectedBrand);
+        }
+
+        $this->view->assign('selectedBrand', $selectedBrand);
+        $this->view->assign('brands', $brands);
         $this->view->assign('cars', $cars);
     }
 

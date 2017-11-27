@@ -17,6 +17,15 @@
 
 		<f:flashMessages />
 
+		<f:for each="{brands}" as="brand">
+			<f:link.action
+					action="list" arguments="{brand:brand}"
+					class="btn {f:if(condition:'{brand}=={selectedBrand}',then:'btn-success')}">
+				<span class="glyphicon glyphicon-filter"></span>
+				{brand.name}
+			</f:link.action>
+		</f:for>
+
 		<table class="table table-striped table-condensed" >
 			<thead>
 				<tr>
