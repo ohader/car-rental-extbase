@@ -84,6 +84,7 @@ class ManagementController extends ActionController
 
     /**
      * @param Car $car
+     * @validate $car \HofUniversityIndie\CarRental\Validation\Car\ColorValidator
      */
     public function updateAction(Car $car)
     {
