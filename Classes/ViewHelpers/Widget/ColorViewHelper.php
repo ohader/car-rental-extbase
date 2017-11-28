@@ -1,19 +1,15 @@
 <?php
 namespace HofUniversityIndie\CarRental\ViewHelpers\Widget;
 
+use HofUniversityIndie\CarRental\Service\Car\ValidColorService;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class ColorViewHelper extends AbstractViewHelper
 {
     /**
-     * @var string[]
+     * @var ValidColorService
      */
-    private $knowColors = [
-        'black',
-        'orange',
-        'green',
-        'red',
-    ];
+    private $validColorService;
 
     /**
      * Don't escape output since it's clean HTML already.
@@ -21,6 +17,14 @@ class ColorViewHelper extends AbstractViewHelper
      * @var bool
      */
     protected $escapeOutput = false;
+
+    /**
+     * @param ValidColorService $validColorService
+     */
+    public function injectValidColorService(ValidColorService $validColorService)
+    {
+        $this->validColorService = $validColorService;
+    }
 
     /**
      * @param string|null $color
@@ -32,10 +36,7 @@ class ColorViewHelper extends AbstractViewHelper
             $color = $this->renderChildren();
         }
 
-        if (
-            in_array($color, $this->knowColors, true)
-            || preg_match('/^#([a-f0-9]{3}|[a-f0-9]{6})$/', $color)
-        ) {
+        if ($this->validColorService->isValid($color)) {
             $styles = [
                 'background-color' => $color,
             ];
