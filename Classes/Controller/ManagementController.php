@@ -44,6 +44,20 @@ class ManagementController extends ActionController
         $this->brandRepository = $brandRepository;
     }
 
+    protected function addErrorFlashMessage()
+    {
+        // in case validation errors have been found for the `updateAction`
+        // skip adding a dedicated flash message since validation errors
+        // are directly shown in the Management/PropertiesForm partial
+        if (
+            $this->arguments->getValidationResults()->hasErrors()
+            && $this->actionMethodName === 'updateAction'
+        ) {
+            return;
+        }
+        parent::addErrorFlashMessage();
+    }
+
     /**
      * @param Brand $selectedBrand
      * @return void
