@@ -9,6 +9,7 @@
 											additionalAttributes="{'aria-describedby': 'car-addon-brand'}" />
 		<span class="input-group-addon" id="car-addon-brand">Brand</span>
 	</div>
+	<f:render partial="Common/ValidationErrors" contentAs="slot" arguments="{property:'car.brand'}" />
 
 	<div class="input-group">
 		<f:form.textfield property="vin"
@@ -16,6 +17,7 @@
 											additionalAttributes="{'aria-describedby': 'car-addon-vin'}" />
 		<span class="input-group-addon" id="car-addon-vin">VIN</span>
 	</div>
+	<f:render partial="Common/ValidationErrors" contentAs="slot" arguments="{property:'car.vin'}" />
 
 	<div class="input-group">
 		<f:form.textfield property="color"
@@ -23,6 +25,7 @@
 											additionalAttributes="{'aria-describedby': 'car-addon-color'}" />
 		<span class="input-group-addon" id="car-addon-color">Color</span>
 	</div>
+	<f:render partial="Common/ValidationErrors" contentAs="slot" arguments="{property:'car.color'}" />
 
 	<f:form.submit value="Submit" class="btn btn-warning" />
 </f:form>
