@@ -8,8 +8,6 @@ namespace HofUniversityIndie\CarRental\Domain\Model;
  * LICENSE.txt file that was distributed with this source code.
  ***/
 
-use HofUniversityIndie\CarRental\Domain\Model\Car;
-
 /**
  * Rental
  */
@@ -39,7 +37,7 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $returnDate = null;
 
     /**
-     * @var Car
+     * @var \HofUniversityIndie\CarRental\Domain\Model\Car
      */
     protected $car;
 
