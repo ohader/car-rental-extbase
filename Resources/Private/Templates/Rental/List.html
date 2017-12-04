@@ -2,6 +2,11 @@
 	<f:layout name="Default" />
 
 	<f:section name="content">
+		<f:if condition="{rentals}">
+			<f:else>
+				<div class="alert alert-info">No rentals found.</div>
+			</f:else>
+		</f:if>
 		<f:for each="{rentals}" as="rental">
 			<div class="media">
 				<div class="media-left">
