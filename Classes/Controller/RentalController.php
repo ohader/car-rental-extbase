@@ -106,6 +106,10 @@ class RentalController extends ActionController
      */
     public function createAction(Car $car, Rental $rental)
     {
+        $rental->setCar($car);
+        $rental->setCustomer($this->customer);
+        $this->rentalRepository->add($rental);
+        $this->redirect('list');
     }
 
     public function deleteAction()

@@ -2,15 +2,13 @@
 namespace HofUniversityIndie\CarRental\Domain\Model;
 
 /***
- *
  * This file is part of the "Car Rental" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
- *
- *  (c) 2017 Oliver Hader <oliver.hader@typo3.org>
- *
  ***/
+
+use HofUniversityIndie\CarRental\Domain\Model\Car;
 
 /**
  * Rental
@@ -37,9 +35,13 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * returnDate
      *
      * @var \DateTime
-     * @validate NotEmpty
      */
     protected $returnDate = null;
+
+    /**
+     * @var Car
+     */
+    protected $car;
 
     /**
      * customer
@@ -130,5 +132,21 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setCustomer(\HofUniversityIndie\CarRental\Domain\Model\Customer $customer)
     {
         $this->customer = $customer;
+    }
+
+    /**
+     * @return Car
+     */
+    public function getCar(): Car
+    {
+        return $this->car;
+    }
+
+    /**
+     * @param Car $car
+     */
+    public function setCar(Car $car)
+    {
+        $this->car = $car;
     }
 }
