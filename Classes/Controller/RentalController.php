@@ -2,8 +2,11 @@
 namespace HofUniversityIndie\CarRental\Controller;
 
 use HofUniversityIndie\CarRental\Domain\Model\Car;
+use HofUniversityIndie\CarRental\Domain\Model\Customer;
 use HofUniversityIndie\CarRental\Domain\Model\Rental;
 use HofUniversityIndie\CarRental\Domain\Repository\RentalRepository;
+use HofUniversityIndie\CarRental\Service\Customer\InvalidSessionException;
+use HofUniversityIndie\CarRental\Service\Customer\SessionService;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter;
 
@@ -22,6 +25,16 @@ class RentalController extends ActionController
     private $rentalRepository;
 
     /**
+     * @var SessionService
+     */
+    private $sessionService;
+
+    /**
+     * @var Customer
+     */
+    private $customer;
+
+    /**
      * @param RentalRepository $rentalRepository
      */
     public function injectRentalRepository(RentalRepository $rentalRepository)
@@ -29,9 +42,24 @@ class RentalController extends ActionController
         $this->rentalRepository = $rentalRepository;
     }
 
+    /**
+     * @param SessionService $sessionService
+     */
+    public function injectSessionService(SessionService $sessionService)
+    {
+        $this->sessionService = $sessionService;
+    }
+
     protected function initializeAction()
     {
         parent::initializeAction();
+
+        try {
+            $this->customer = $this->sessionService->provideCustomer();
+        } catch (InvalidSessionException $exception)
+        {
+            $this->redirect('notLoggedInError');
+        }
 
         // adjust date format for rental.startDate & rental.endDate to 'Y-m-d'
         if ($this->arguments->hasArgument('rental')) {
@@ -81,6 +109,10 @@ class RentalController extends ActionController
     }
 
     public function deleteAction()
+    {
+    }
+
+    public function notLoggedInErrorAction()
     {
     }
 

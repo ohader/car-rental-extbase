@@ -21,7 +21,7 @@ call_user_func(
             'HofUniversityIndie.CarRental',
             'Rental',
             [
-                'Rental' => 'list, new, create, delete'
+                'Rental' => 'list, new, create, delete, notLoggedInError'
             ],
             // non-cacheable actions
             [
