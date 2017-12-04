@@ -15,37 +15,33 @@
 	<f:section name="content">
 		<h1>Listing for Car</h1>
 
-		<f:flashMessages />
-
-		<table  class="tx_carrental" >
-			<tr>
-				<th><f:translate key="tx_carrental_domain_model_car.vin" /></th>
-				<th><f:translate key="tx_carrental_domain_model_car.color" /></th>
-				<th><f:translate key="tx_carrental_domain_model_car.images" /></th>
-				<th> </th>
-				<th> </th>
-			</tr>
-
-			<f:for each="{cars}" as="car">
-				<tr>
-					<td><f:link.action action="show" arguments="{car : car}"> {car.vin}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{car : car}"> {car.color}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{car : car}">
+		<f:for each="{cars}" as="car">
+			<div class="media">
+				<div class="media-left">
+					<f:link.action action="show" arguments="{car:car}">
 						<f:if condition="{car.images}">
 							<f:then>
-								<f:image image="{car.images.0}" maxWidth="50" />
+								<f:image image="{car.images.0}" width="160" maxHeight="160" class="media-object" />
 							</f:then>
 							<f:else>
-								<div style="width:50px;height:50px;background:#ccc"></div>
+								<img src="{f:uri.resource(path:'Images/no-image-car.svg')}" width="160">
 							</f:else>
 						</f:if>
-					</f:link.action></td>
-					<td><f:link.action action="edit" arguments="{car : car}">Edit</f:link.action></td>
-					<td><f:link.action action="delete" arguments="{car : car}">Delete</f:link.action></td>
-				</tr>
-			</f:for>
-		</table>
-
-		<f:link.action action="new">New Car</f:link.action>
+					</f:link.action>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">
+						<f:link.action action="show" arguments="{car:car}">{car.brand.name}: {car.vin}</f:link.action>
+					</h4>
+					<ul>
+						<li>color: {car.color}</li>
+						<li>tires: {car.tires -> f:count()}</li>
+					</ul>
+					<f:link.action action="show" arguments="{car:car}" class="btn btn-default">
+						show details
+					</f:link.action>
+				</div>
+			</div>
+		</f:for>
 	</f:section>
 </html>

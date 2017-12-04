@@ -1,25 +1,33 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<table class="tx-car-rental" >
-	<tr>
-		<td>
-			<f:translate key="tx_carrental_domain_model_car.vin" />
-		</td>
-		<td>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<f:translate key="tx_carrental_domain_model_car.color" />
-		</td>
-		<td>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<f:translate key="tx_carrental_domain_model_car.images" />
-		</td>
-		<td>
-		</td>
-	</tr>
-</table>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+			xmlns:car="http://typo3.org/ns/HofUniversityIndie/CarRental/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<h2>
+	{car.vin}
+</h2>
+
+<h3>
+	<f:translate key="tx_carrental_domain_model_car.color" />
+</h3>
+
+<car:widget.color color="{car.color}" />
+
+<h3>
+	<f:translate key="tx_carrental_domain_model_car.images" />
+</h3>
+
+<f:if condition="{car.images}">
+	<f:then>
+		<f:for each="{car.images}" as="image">
+			<f:image image="{image}" maxWidth="200" />
+		</f:for>
+	</f:then>
+	<f:else>
+		<f:comment>@todo Was too lazy, move label to locallang.xml file</f:comment>
+		<div class="alert alert-info">No images are defined for this car.</div>
+	</f:else>
+</f:if>
+
+<h3>More information</h3>
+
 </html>
