@@ -24,6 +24,11 @@
 						<li>start: {rental.startDate -> f:format.date(format:'Y-m-d')}</li>
 						<li>end: {rental.startDate -> f:format.date(format:'Y-m-d')}</li>
 					</ul>
+					<f:if condition="{rental.startDate} > {today}">
+						<f:link.action action="delete" arguments="{rental:rental}" class="btn btn-danger">
+							cancel
+						</f:link.action>
+					</f:if>
 				</div>
 			</div>
 		</f:for>

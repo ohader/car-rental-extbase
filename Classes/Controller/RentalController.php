@@ -80,6 +80,7 @@ class RentalController extends ActionController
     {
         $rentals = $this->rentalRepository->findByCustomer($this->customer);
         $this->view->assign('rentals', $rentals);
+        $this->view->assign('today', $this->createDate());
     }
 
     /**
@@ -114,8 +115,15 @@ class RentalController extends ActionController
         $this->redirect('list');
     }
 
-    public function deleteAction()
+    /**
+     * @param Rental $rental
+     */
+    public function deleteAction(Rental $rental)
     {
+        if ($rental->getStartDate() > $this->createDate()) {
+            $this->rentalRepository->remove($rental);
+        }
+        $this->redirect('list');
     }
 
     public function notLoggedInErrorAction()
