@@ -95,5 +95,11 @@ call_user_func(
             \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
             ['source' => 'EXT:car_rental/Resources/Public/Icons/user_plugin_management.svg']
         );
+
+        // RealURL speaking URLs configuration for EXT:car_rental specific links
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']
+            ['ext/realurl/class.tx_realurl_autoconfgen.php']
+            ['extensionConfiguration']['car_rental']
+            = \HofUniversityIndie\CarRental\Hook\RealUrlConfiguration::class . '->add';
     }
 );
