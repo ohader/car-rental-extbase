@@ -78,6 +78,8 @@ class RentalController extends ActionController
 
     public function listAction()
     {
+        $rentals = $this->rentalRepository->findByCustomer($this->customer);
+        $this->view->assign('rentals', $rentals);
     }
 
     /**
