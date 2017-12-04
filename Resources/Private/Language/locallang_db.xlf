@@ -72,6 +72,12 @@
 			<trans-unit id="tx_car_rental_information.description">
 				<source>Information on cars</source>
 			</trans-unit>
+			<trans-unit id="tx_car_rental_rental.name">
+				<source>Rental</source>
+			</trans-unit>
+			<trans-unit id="tx_car_rental_rental.description">
+				<source>Rental overview &amp; checkout</source>
+			</trans-unit>
 			<trans-unit id="tx_car_rental_management.name">
 				<source>Management</source>
 			</trans-unit>

@@ -17,6 +17,12 @@ call_user_func(
         );
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
             'HofUniversityIndie.CarRental',
+            'Rental',
+            'Rental',
+            'car_rental-plugin-rental'
+        );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'HofUniversityIndie.CarRental',
             'Management',
             'Management',
             'car_rental-plugin-management'
