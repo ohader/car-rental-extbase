@@ -120,6 +120,8 @@ class RentalController extends ActionController
      */
     public function deleteAction(Rental $rental)
     {
+        $this->verifyRentalCustomer($rental);
+
         if ($rental->getStartDate() > $this->createDate()) {
             $this->rentalRepository->remove($rental);
         }
@@ -128,6 +130,20 @@ class RentalController extends ActionController
 
     public function notLoggedInErrorAction()
     {
+    }
+
+    /**
+     * Verifies current customer in rental object to be modified.
+     *
+     * @param Rental $rental
+     */
+    private function verifyRentalCustomer(Rental $rental)
+    {
+        $customer = $rental->getCustomer();
+
+        if (!empty($customer) && $customer->getUid() !== $this->customer->getUid()) {
+            $this->redirect('permissionError');
+        }
     }
 
     private function createDate(int $addDays = 0): \DateTime
