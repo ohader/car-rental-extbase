@@ -29,7 +29,6 @@ class Customer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * First name
      *
      * @var string
-     * @validate NotEmpty
      */
     protected $firstName = '';
 
