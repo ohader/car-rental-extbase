@@ -40,7 +40,10 @@ class SessionService
         $frontendUserId = $this->getFrontendUserId();
 
         if (empty($frontendUserId)) {
-            throw new InvalidSessionException();
+            throw new InvalidSessionException(
+                'No frontend user logged in',
+                1512943193
+            );
         }
 
         return $this->resolveOrCreateCustomer($frontendUserId);
@@ -72,8 +75,9 @@ class SessionService
 
     /**
      * @return TypoScriptFrontendController
+     * @internal Exposed as protected to be testable with method mocks
      */
-    private function getFrontendController()
+    protected function getFrontendController()
     {
         return $GLOBALS['TSFE'];
     }
