@@ -101,5 +101,9 @@ call_user_func(
             ['ext/realurl/class.tx_realurl_autoconfgen.php']
             ['extensionConfiguration']['car_rental']
             = \HofUniversityIndie\CarRental\Hook\RealUrlConfiguration::class . '->add';
+
+        // register Extbase import command controller
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers']['car_rental']
+            = \HofUniversityIndie\CarRental\Command\ExtbaseCommandController::class;
     }
 );
