@@ -6,7 +6,7 @@ namespace HofUniversityIndie\CarRental\Tests\Unit\Controller;
  *
  * @author Oliver Hader <oliver.hader@typo3.org>
  */
-class CarControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class CarControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
 {
     /**
      * @var \HofUniversityIndie\CarRental\Controller\CarController
@@ -15,16 +15,10 @@ class CarControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 
     protected function setUp()
     {
-        parent::setUp();
         $this->subject = $this->getMockBuilder(\HofUniversityIndie\CarRental\Controller\CarController::class)
             ->setMethods(['redirect', 'forward', 'addFlashMessage'])
             ->disableOriginalConstructor()
             ->getMock();
-    }
-
-    protected function tearDown()
-    {
-        parent::tearDown();
     }
 
     /**

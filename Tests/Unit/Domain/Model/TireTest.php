@@ -6,7 +6,7 @@ namespace HofUniversityIndie\CarRental\Tests\Unit\Domain\Model;
  *
  * @author Oliver Hader <oliver.hader@typo3.org>
  */
-class TireTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class TireTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
 {
     /**
      * @var \HofUniversityIndie\CarRental\Domain\Model\Tire
@@ -15,13 +15,7 @@ class TireTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 
     protected function setUp()
     {
-        parent::setUp();
         $this->subject = new \HofUniversityIndie\CarRental\Domain\Model\Tire();
-    }
-
-    protected function tearDown()
-    {
-        parent::tearDown();
     }
 
     /**

@@ -6,7 +6,7 @@ namespace HofUniversityIndie\CarRental\Tests\Unit\Domain\Model;
  *
  * @author Oliver Hader <oliver.hader@typo3.org>
  */
-class RentalTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class RentalTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
 {
     /**
      * @var \HofUniversityIndie\CarRental\Domain\Model\Rental
@@ -15,13 +15,7 @@ class RentalTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 
     protected function setUp()
     {
-        parent::setUp();
         $this->subject = new \HofUniversityIndie\CarRental\Domain\Model\Rental();
-    }
-
-    protected function tearDown()
-    {
-        parent::tearDown();
     }
 
     /**
