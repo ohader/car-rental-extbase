@@ -1,4 +1,4 @@
-
+# the plugin. prefix indicates configuration dedicated for the TYPO3 frontend
 plugin.tx_carrental_information {
     view {
         templateRootPaths.0 = EXT:car_rental/Resources/Private/Templates/
@@ -70,5 +70,12 @@ plugin.tx_carrental_management {
     }
     mvc {
         #callDefaultActionIfActionCantBeResolved = 1
+    }
+}
+
+# the module. prefix indicates configuration dedicated for the TYPO3 backend
+module.tx_carrental {
+    persistence {
+        storagePid = {$plugin.tx_carrental.persistence.storagePid}
     }
 }

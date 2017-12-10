@@ -9,6 +9,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 /***
@@ -47,8 +48,13 @@ class ImportCommand extends Command
 
         $this->verifyFile($file);
 
+        $reader = $this->createCsvReader();
+
+        $this->getConfigurationManager()->setConfiguration([
+            'extensionName' => 'CarRental'
+        ]);
         $this->createExtbaseService($page)->import(
-            $this->createCsvReader()->read($file)
+            $reader->read($file)
         );
     }
 
@@ -97,6 +103,14 @@ class ImportCommand extends Command
     private function createCsvReader(): CsvReader
     {
         return GeneralUtility::makeInstance(CsvReader::class);
+    }
+
+    /**
+     * @return ConfigurationManager
+     */
+    private function getConfigurationManager(): ConfigurationManager
+    {
+        return $this->getObjectManager()->get(ConfigurationManager::class);
     }
 
     /**
