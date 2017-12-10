@@ -8,6 +8,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
@@ -33,6 +34,12 @@ class ImportCommand extends Command
                 'page',
                 InputArgument::REQUIRED,
                 'Target page id'
+            )
+            ->addArgument(
+                'strategy',
+                InputArgument::OPTIONAL,
+                'Strategy to be used (either "extbase" or "datahandler")',
+                'extbase'
             );
     }
 
@@ -45,17 +52,41 @@ class ImportCommand extends Command
     {
         $file = $input->getArgument('file');
         $page = $input->getArgument('page');
+        $strategy = $input->getArgument('strategy');
 
+        $this->verifyStrategy($strategy);
         $this->verifyFile($file);
 
         $reader = $this->createCsvReader();
 
-        $this->getConfigurationManager()->setConfiguration([
-            'extensionName' => 'CarRental'
-        ]);
-        $this->createExtbaseService($page)->import(
-            $reader->read($file)
-        );
+        if ($strategy === 'extbase') {
+            $this->getConfigurationManager()->setConfiguration([
+                'extensionName' => 'CarRental'
+            ]);
+            $this->createExtbaseService($page)->import(
+                $reader->read($file)
+            );
+        }
+        if ($strategy === 'datahandler') {
+            // faking backend user admin permissions
+            // (in CLI context not real backend user is logged in)
+            $this->getBackendUser()->user['uid'] = 0;
+            $this->getBackendUser()->user['admin'] = 1;
+            $this->getBackendUser()->workspace = 0;
+            $this->createDataHandlerService($page)->import(
+                $reader->read($file)
+            );
+        }
+    }
+
+    private function verifyStrategy(string $strategy)
+    {
+        if (!in_array($strategy, ['extbase', 'datahandler'], true)) {
+            throw new \RuntimeException(
+                sprintf('Invalid "%s" strategy', $strategy),
+                1512417928
+            );
+        }
     }
 
     /**
@@ -82,6 +113,7 @@ class ImportCommand extends Command
     }
 
     /**
+     * @param int $page
      * @return ExtbaseService
      */
     private function createExtbaseService(int $page): ExtbaseService
@@ -90,6 +122,7 @@ class ImportCommand extends Command
     }
 
     /**
+     * @param int $page
      * @return DataHandlerService
      */
     private function createDataHandlerService(int $page): DataHandlerService
@@ -119,5 +152,13 @@ class ImportCommand extends Command
     private function getObjectManager(): ObjectManager
     {
         return GeneralUtility::makeInstance(ObjectManager::class);
+    }
+
+    /**
+     * @return BackendUserAuthentication
+     */
+    private function getBackendUser(): BackendUserAuthentication
+    {
+        return $GLOBALS['BE_USER'];
     }
 }
