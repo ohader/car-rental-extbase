@@ -1,6 +1,7 @@
 <?php
 namespace HofUniversityIndie\CarRental\Command;
 
+use HofUniversityIndie\CarRental\Service\Import\ConsumptionService;
 use HofUniversityIndie\CarRental\Service\Import\CsvReader;
 use HofUniversityIndie\CarRental\Service\Import\DataHandlerService;
 use HofUniversityIndie\CarRental\Service\Import\ExtbaseService;
@@ -58,6 +59,8 @@ class ImportCommand extends Command
         $this->verifyFile($file);
 
         $reader = $this->createCsvReader();
+        $consumption = new ConsumptionService();
+        $consumption->start();
 
         if ($strategy === 'extbase') {
             $this->getConfigurationManager()->setConfiguration([
@@ -75,6 +78,13 @@ class ImportCommand extends Command
             $this->getBackendUser()->workspace = 0;
             $this->createDataHandlerService($page)->import(
                 $reader->read($file)
+            );
+        }
+
+        $consumption->stop();
+        foreach ($consumption->getDifference() as $aspect => $value) {
+            $output->writeln(
+                sprintf('Consumption "%s": %.02f', $aspect, $value)
             );
         }
     }
