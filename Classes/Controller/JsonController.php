@@ -33,6 +33,23 @@ class JsonController extends ActionController
     public function listAction()
     {
         $cars = $this->carRepository->findAll();
-        return json_encode([]);
+        return json_encode($this->getJsonRepresentation($cars));
+    }
+
+    /**
+     * @param \Traversable|Car[] $cars
+     * @return array
+     */
+    private function getJsonRepresentation(\Traversable $cars)
+    {
+        $result = [];
+        foreach ($cars as $car) {
+            $result[] = [
+                'vin' => $car->getVin(),
+                'color' => $car->getColor(),
+                'brand' => $car->getBrand()->getName(),
+            ];
+        }
+        return $result;
     }
 }
