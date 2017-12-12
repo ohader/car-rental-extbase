@@ -73,9 +73,32 @@ plugin.tx_carrental_management {
     }
 }
 
+plugin.tx_carrental_json {
+    persistence {
+        storagePid = {$plugin.tx_carrental.persistence.storagePid}
+        #recursive = 1
+    }
+}
+
 # the module. prefix indicates configuration dedicated for the TYPO3 backend
 module.tx_carrental {
     persistence {
         storagePid = {$plugin.tx_carrental.persistence.storagePid}
+    }
+}
+
+carJsonPage = PAGE
+carJsonPage {
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-Type: text/json
+    }
+    typeNum = 1513077042
+    10 = USER
+    10 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        extensionName = CarRental
+        pluginName = Json
+        vendorName = HofUniversityIndie
     }
 }

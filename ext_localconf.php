@@ -39,6 +39,16 @@ call_user_func(
                 'Management' => 'edit, update, delete, status'
             ]
         );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'HofUniversityIndie.CarRental',
+            'Json',
+            [
+                'Json' => 'list'
+            ],
+            // non-cacheable actions
+            [
+            ]
+        );
 
         // add dedicated visualization in backend when "adding new content element"
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
