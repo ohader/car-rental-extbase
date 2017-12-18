@@ -2,14 +2,11 @@
 namespace HofUniversityIndie\CarRental\Controller;
 
 use HofUniversityIndie\CarRental\Domain\Model\Car;
-use HofUniversityIndie\CarRental\Domain\Model\Customer;
-use HofUniversityIndie\CarRental\Domain\Model\Rental;
 use HofUniversityIndie\CarRental\Domain\Repository\CarRepository;
-use HofUniversityIndie\CarRental\Domain\Repository\RentalRepository;
-use HofUniversityIndie\CarRental\Service\Customer\InvalidSessionException;
-use HofUniversityIndie\CarRental\Service\Customer\SessionService;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter;
+use TYPO3\CMS\Extbase\Mvc\View\JsonView;
 
 /***
  * This file is part of the "Car Rental" Extension for TYPO3 CMS.
@@ -25,6 +22,16 @@ class JsonController extends ActionController
      */
     private $carRepository = null;
 
+    /**
+     * @var JsonView
+     */
+    protected $view;
+
+    /**
+     * @var string
+     */
+    protected $defaultViewObjectName = JsonView::class;
+
     public function injectCarRepository(CarRepository $carRepository)
     {
         $this->carRepository = $carRepository;
@@ -33,23 +40,56 @@ class JsonController extends ActionController
     public function listAction()
     {
         $cars = $this->carRepository->findAll();
-        return json_encode($this->getJsonRepresentation($cars));
+
+        $this->view->setVariablesToRender(['cars']);
+        $this->view->assign(
+            'cars',
+            $this->getCarsJsonRepresentation($cars->toArray())
+        );
     }
 
     /**
-     * @param \Traversable|Car[] $cars
+     * @param Car[] $cars
      * @return array
      */
-    private function getJsonRepresentation(\Traversable $cars)
+    private function getCarsJsonRepresentation(array $cars): array
     {
-        $result = [];
-        foreach ($cars as $car) {
-            $result[] = [
-                'vin' => $car->getVin(),
-                'color' => $car->getColor(),
-                'brand' => $car->getBrand()->getName(),
-            ];
-        }
-        return $result;
+        return array_map(
+            function (Car $car) {
+                return [
+                    'vin' => $car->getVin(),
+                    'color' => $car->getColor(),
+                    'brand' => $car->getBrand()->getName(),
+                    'images' => $this->getImagesJsonRepresentation(
+                        $car->getImages()->toArray()
+                    ),
+                ];
+            },
+            $cars
+        );
+    }
+
+    private function getImagesJsonRepresentation(array $images): array
+    {
+        $webPath = $this->resolveWebPath();
+        return array_map(
+            function (FileReference $fileReference) use ($webPath) {
+                return $webPath . $fileReference
+                    ->getOriginalResource()
+                    ->getPublicUrl();
+            },
+            $images
+        );
+    }
+
+    /**
+     * Resolves web path prefix
+     * (e.g. if http://site.com/path/index.php is called /path/ is returned)
+     *
+     * @return string
+     */
+    private function resolveWebPath(): string
+    {
+        return GeneralUtility::getIndpEnv('TYPO3_SITE_PATH');
     }
 }
