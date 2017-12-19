@@ -91,7 +91,12 @@ carJsonPage = PAGE
 carJsonPage {
     config {
         disableAllHeaderCode = 1
-        additionalHeaders = Content-Type: text/json
+        additionalHeaders {
+            1.header = Content-Type: text/json
+            2.header = Access-Control-Allow-Headers: Accept, Content-Type
+            3.header = Access-Control-Allow-Methods: GET
+            4.header = Access-Control-Allow-Origin: *
+        }
     }
     typeNum = 1513077042
     10 = USER

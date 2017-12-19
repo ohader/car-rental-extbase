@@ -1,0 +1,8 @@
+<div>
+  <div>
+    <input [(ngModel)]="search">
+  </div>
+  <h2 *ngIf="search === ''">All cars</h2>
+  <h2 *ngIf="search !== ''">Cars matching "{{ search }}"</h2>
+  <car [car]="car" *ngFor="let car of cars | carFilter:search"></car>
+</div>
