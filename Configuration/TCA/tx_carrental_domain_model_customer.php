@@ -119,9 +119,9 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_customer.user',
             'config' => [
-                'type' => 'input',
-                'size' => 4,
-                'eval' => 'int,required'
+                'type' => 'select',
+                'foreign_table' => 'fe_users',
+                'eval' => 'required'
             ]
         ],
         'first_name' => [
