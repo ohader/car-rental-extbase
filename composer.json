@@ -1,0 +1,16 @@
+{
+    "name": "ohader/car-rental-project",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Oliver Hader",
+            "email": "oliver@typo3.org"
+        }
+    ],
+    "require": {
+        "typo3/minimal": "^9.5",
+        "bk2k/bootstrap-package": "^11.0",
+        "typo3-console/composer-auto-commands": "^0.2.1",
+        "typo3/cms-tstemplate": "^9.5"
+    }
+}
