@@ -6,7 +6,7 @@ call_user_func(
     {
         // configure Extbase plugin, used to control MVC dispatcher logic
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'HofUniversityIndie.CarRental',
+            'OliverHader.CarRentalA',
             'Information',
             [
                 'Car' => 'list, show'
@@ -18,7 +18,7 @@ call_user_func(
         );
         // configure Extbase plugin, used to control MVC dispatcher logic
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'HofUniversityIndie.CarRental',
+            'OliverHader.CarRentalA',
             'Rental',
             [
                 'Rental' => 'list, new, create, delete, notLoggedInError'
@@ -29,7 +29,7 @@ call_user_func(
             ]
         );
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'HofUniversityIndie.CarRental',
+            'OliverHader.CarRentalA',
             'Management',
             [
                 'Management' => 'list, show, edit, update, delete, status'
@@ -40,7 +40,7 @@ call_user_func(
             ]
         );
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'HofUniversityIndie.CarRental',
+            'OliverHader.CarRentalA',
             'Json',
             [
                 'Json' => 'list'
@@ -56,27 +56,27 @@ call_user_func(
                 wizards.newContentElement.wizardItems.plugins {
                     elements {
                         information {
-                            iconIdentifier = car_rental-plugin-information
-                            title = LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_car_rental_information.name
-                            description = LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_car_rental_information.description
+                            iconIdentifier = car_rental_a-plugin-information
+                            title = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_information.name
+                            description = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_information.description
                             tt_content_defValues {
                                 CType = list
                                 list_type = carrental_information
                             }
                         }
                         rent {
-                            iconIdentifier = car_rental-plugin-rental
-                            title = LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_car_rental_rental.name
-                            description = LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_car_rental_rental.description
+                            iconIdentifier = car_rental_a-plugin-rental
+                            title = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_rental.name
+                            description = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_rental.description
                             tt_content_defValues {
                                 CType = list
                                 list_type = carrental_rental
                             }
                         }
                         management {
-                            iconIdentifier = car_rental-plugin-management
-                            title = LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_car_rental_management.name
-                            description = LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_car_rental_management.description
+                            iconIdentifier = car_rental_a-plugin-management
+                            title = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_management.name
+                            description = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_a_management.description
                             tt_content_defValues {
                                 CType = list
                                 list_type = carrental_management
@@ -91,29 +91,22 @@ call_user_func(
         // register different icons for different plugin-types, shown in backend
         $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
         $iconRegistry->registerIcon(
-            'car_rental-plugin-information',
+            'car_rental_a-plugin-information',
             \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-            ['source' => 'EXT:car_rental/Resources/Public/Icons/user_plugin_information.svg']
+            ['source' => 'EXT:car_rental_a/Resources/Public/Icons/user_plugin_information.svg']
         );
         $iconRegistry->registerIcon(
-            'car_rental-plugin-rental',
+            'car_rental_a-plugin-rental',
             \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-            ['source' => 'EXT:car_rental/Resources/Public/Icons/user_plugin_rental.svg']
+            ['source' => 'EXT:car_rental_a/Resources/Public/Icons/user_plugin_rental.svg']
         );
         $iconRegistry->registerIcon(
-            'car_rental-plugin-management',
+            'car_rental_a-plugin-management',
             \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-            ['source' => 'EXT:car_rental/Resources/Public/Icons/user_plugin_management.svg']
+            ['source' => 'EXT:car_rental_a/Resources/Public/Icons/user_plugin_management.svg']
         );
-
-        // RealURL speaking URLs configuration for EXT:car_rental specific links
-        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']
-            ['ext/realurl/class.tx_realurl_autoconfgen.php']
-            ['extensionConfiguration']['car_rental']
-            = \HofUniversityIndie\CarRental\Hook\RealUrlConfiguration::class . '->add';
-
         // register Extbase import command controller
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers']['car_rental']
-            = \HofUniversityIndie\CarRental\Command\ExtbaseCommandController::class;
+            = \OliverHader\CarRentalA\Command\ExtbaseCommandController::class;
     }
 );

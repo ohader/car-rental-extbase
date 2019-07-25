@@ -1,8 +1,8 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_brand',
-        'label' => 'name',
+        'title' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_tire',
+        'label' => 'tread_depth',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -16,14 +16,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'name',
-        'iconfile' => 'EXT:car_rental/Resources/Public/Icons/tx_carrental_domain_model_brand.gif'
+        'searchFields' => 'tread_depth,pressure',
+        'iconfile' => 'EXT:car_rental_a/Resources/Public/Icons/tire.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, tread_depth, pressure',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, tread_depth, pressure, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -54,8 +54,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_carrental_domain_model_brand',
-                'foreign_table_where' => 'AND tx_carrental_domain_model_brand.pid=###CURRENT_PID### AND tx_carrental_domain_model_brand.sys_language_uid IN (-1,0)',
+                'foreign_table' => 'tx_carrentala_domain_model_tire',
+                'foreign_table_where' => 'AND tx_carrentala_domain_model_tire.pid=###CURRENT_PID### AND tx_carrentala_domain_model_tire.sys_language_uid IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [
@@ -115,15 +115,29 @@ return [
             ],
         ],
 
-        'name' => [
+        'tread_depth' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_brand.name',
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_tire.tread_depth',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,required'
-            ],
+                'eval' => 'double2,required'
+            ]
+        ],
+        'pressure' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_tire.pressure',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'double2,required'
+            ]
         ],
     
+        'car' => [
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
     ],
 ];

@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Domain\Repository;
+namespace OliverHader\CarRentalA\Domain\Repository;
 
 /***
  * This file is part of the "Car Rental" Extension for TYPO3 CMS.
@@ -8,8 +8,8 @@ namespace HofUniversityIndie\CarRental\Domain\Repository;
  * LICENSE.txt file that was distributed with this source code.
  ***/
 
-use HofUniversityIndie\CarRental\Domain\Model\Customer;
-use HofUniversityIndie\CarRental\Domain\Model\Rental;
+use OliverHader\CarRentalA\Domain\Model\Customer;
+use OliverHader\CarRentalA\Domain\Model\Rental;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 

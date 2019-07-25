@@ -1,6 +1,6 @@
 <?php
 return [
-    'car_rental:datahandler:import' => [
-        'class' => \HofUniversityIndie\CarRental\Command\DataHandlerCommand::class,
+    'car_rental_a:datahandler:import' => [
+        'class' => \OliverHader\CarRentalA\Command\DataHandlerCommand::class,
     ],
 ];

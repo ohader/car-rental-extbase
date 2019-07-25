@@ -1,7 +1,7 @@
 <?php
-namespace HofUniversityIndie\CarRental\Tests\Functional\Services\Import;
+namespace OliverHader\CarRentalA\Tests\Functional\Services\Import;
 
-use HofUniversityIndie\CarRental\Service\Import\ExtbaseService;
+use OliverHader\CarRentalA\Service\Import\ExtbaseService;
 use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
@@ -17,7 +17,7 @@ class ExtbaseServiceTest extends FunctionalTestCase
      * @var array
      */
     protected $testExtensionsToLoad = [
-        'typo3conf/ext/car_rental'
+        'typo3conf/ext/car_rental_a'
     ];
 
     protected function setUp()
@@ -55,9 +55,9 @@ class ExtbaseServiceTest extends FunctionalTestCase
         $subject = $this->objectManager->get(ExtbaseService::class, 1);
         $subject->import($csvData);
 
-        $cars = $this->getAllRecords('tx_carrental_domain_model_car');
-        $brands = $this->getAllRecords('tx_carrental_domain_model_brand');
-        $tires = $this->getAllRecords('tx_carrental_domain_model_tire');
+        $cars = $this->getAllRecords('tx_carrentala_domain_model_car');
+        $brands = $this->getAllRecords('tx_carrentala_domain_model_brand');
+        $tires = $this->getAllRecords('tx_carrentala_domain_model_tire');
 
         // assert record counts
         static::assertCount(1, $brands);

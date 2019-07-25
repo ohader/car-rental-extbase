@@ -1,6 +1,6 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:car_rental/Configuration/TypoScript/setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:car_rental_a/Configuration/TypoScript/setup.typoscript">
 
 // define storage page ID (pages.uid on which cars are stored in test)
 // (explicitly defining TypoScript settings here - not loaded automatically)
 config.tx_extbase.persistence.storagePid = 1
-plugin.tx_carrental_json.persistence.storagePid = 1
+plugin.tx_carrentala_json.persistence.storagePid = 1

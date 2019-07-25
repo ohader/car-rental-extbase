@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Tests\Unit\Domain\Model;
+namespace OliverHader\CarRentalA\Tests\Unit\Domain\Model;
 
 /**
  * Test case.
@@ -9,13 +9,13 @@ namespace HofUniversityIndie\CarRental\Tests\Unit\Domain\Model;
 class BrandTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
 {
     /**
-     * @var \HofUniversityIndie\CarRental\Domain\Model\Brand
+     * @var \OliverHader\CarRentalA\Domain\Model\Brand
      */
     protected $subject = null;
 
     protected function setUp()
     {
-        $this->subject = new \HofUniversityIndie\CarRental\Domain\Model\Brand();
+        $this->subject = new \OliverHader\CarRentalA\Domain\Model\Brand();
     }
 
     /**

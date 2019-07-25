@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Controller;
+namespace OliverHader\CarRentalA\Controller;
 
 /***
  *
@@ -20,7 +20,7 @@ class CarController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
      * carRepository
      *
-     * @var \HofUniversityIndie\CarRental\Domain\Repository\CarRepository
+     * @var \OliverHader\CarRentalA\Domain\Repository\CarRepository
      * @inject
      */
     protected $carRepository = null;
@@ -39,10 +39,10 @@ class CarController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
      * action show
      *
-     * @param \HofUniversityIndie\CarRental\Domain\Model\Car $car
+     * @param \OliverHader\CarRentalA\Domain\Model\Car $car
      * @return void
      */
-    public function showAction(\HofUniversityIndie\CarRental\Domain\Model\Car $car)
+    public function showAction(\OliverHader\CarRentalA\Domain\Model\Car $car)
     {
         $this->view->assign('car', $car);
     }

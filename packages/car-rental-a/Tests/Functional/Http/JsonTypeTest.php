@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Tests\Functional\Http;
+namespace OliverHader\CarRentalA\Tests\Functional\Http;
 
 use PHPUnit\Util\PHP\AbstractPhpProcess;
 use TYPO3\TestingFramework\Core\Functional\Framework\Frontend\Response;
@@ -26,7 +26,7 @@ class JsonTypeTest extends FunctionalTestCase
         // sets a TYPO3 root page & loads basic TypoScript rendering instruction
         $this->setUpFrontendRootPage(
             1,
-            ['EXT:car_rental/Tests/Functional/Http/Fixtures/JsonType.typoscript']
+            ['EXT:car_rental_a/Tests/Functional/Http/Fixtures/JsonType.typoscript']
         );
     }
 

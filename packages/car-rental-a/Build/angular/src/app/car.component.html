@@ -1,8 +1,0 @@
-<div>
-  Brand: {{ car.brand }}
-  VIN: {{ car.vin }}
-  Color: {{ car.color }}
-  <ng-container *ngIf="car.images.length > 0">
-    <img [src]="car.images[0].url | url" style="width: 100px">
-  </ng-container>
-</div>

@@ -1,7 +1,7 @@
 <?php
-namespace HofUniversityIndie\CarRental\Tests\Unit\Services\Car;
+namespace OliverHader\CarRentalA\Tests\Unit\Services\Car;
 
-use HofUniversityIndie\CarRental\Service\Car\ValidColorService;
+use OliverHader\CarRentalA\Service\Car\ValidColorService;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class ValidColorServiceTest extends UnitTestCase

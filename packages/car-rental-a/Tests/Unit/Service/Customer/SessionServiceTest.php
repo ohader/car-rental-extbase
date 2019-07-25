@@ -1,10 +1,10 @@
 <?php
-namespace HofUniversityIndie\CarRental\Tests\Unit\Services\Customer;
+namespace OliverHader\CarRentalA\Tests\Unit\Services\Customer;
 
-use HofUniversityIndie\CarRental\Domain\Model\Customer;
-use HofUniversityIndie\CarRental\Domain\Repository\CustomerRepository;
-use HofUniversityIndie\CarRental\Service\Customer\InvalidSessionException;
-use HofUniversityIndie\CarRental\Service\Customer\SessionService;
+use OliverHader\CarRentalA\Domain\Model\Customer;
+use OliverHader\CarRentalA\Domain\Repository\CustomerRepository;
+use OliverHader\CarRentalA\Service\Customer\InvalidSessionException;
+use OliverHader\CarRentalA\Service\Customer\SessionService;
 use PHPUnit\Framework\MockObject\MockObject;
 use Prophecy\Prophecy\ObjectProphecy;
 use TYPO3\CMS\Extbase\Object\ObjectManager;

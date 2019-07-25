@@ -1,8 +1,8 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_tire',
-        'label' => 'tread_depth',
+        'title' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_customer',
+        'label' => 'user',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -16,14 +16,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'tread_depth,pressure',
-        'iconfile' => 'EXT:car_rental/Resources/Public/Icons/tx_carrental_domain_model_tire.gif'
+        'searchFields' => 'user,first_name,last_name',
+        'iconfile' => 'EXT:car_rental_a/Resources/Public/Icons/customer.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, tread_depth, pressure',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, user, first_name, last_name',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, tread_depth, pressure, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, user, first_name, last_name, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -54,8 +54,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_carrental_domain_model_tire',
-                'foreign_table_where' => 'AND tx_carrental_domain_model_tire.pid=###CURRENT_PID### AND tx_carrental_domain_model_tire.sys_language_uid IN (-1,0)',
+                'foreign_table' => 'tx_carrentala_domain_model_customer',
+                'foreign_table_where' => 'AND tx_carrentala_domain_model_customer.pid=###CURRENT_PID### AND tx_carrentala_domain_model_customer.sys_language_uid IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [
@@ -115,29 +115,33 @@ return [
             ],
         ],
 
-        'tread_depth' => [
+        'user' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_tire.tread_depth',
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_customer.user',
+            'config' => [
+                'type' => 'select',
+                'foreign_table' => 'fe_users',
+                'eval' => 'required'
+            ]
+        ],
+        'first_name' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_customer.first_name',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'double2,required'
-            ]
-        ],
-        'pressure' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_tire.pressure',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'double2,required'
-            ]
-        ],
-    
-        'car' => [
-            'config' => [
-                'type' => 'passthrough',
+                'eval' => 'trim,required'
             ],
         ],
+        'last_name' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_customer.last_name',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
+            ],
+        ],
+    
     ],
 ];

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dataset>
-	<tx_carrental_domain_model_car>
+	<tx_carrentala_domain_model_car>
 		<uid>1</uid>
 		<pid>1</pid>
 		<deleted>0</deleted>
@@ -9,5 +9,5 @@
 		<color>COLOR</color>
 		<brand>1</brand>
 		<tires>4</tires>
-	</tx_carrental_domain_model_car>
+	</tx_carrentala_domain_model_car>
 </dataset>

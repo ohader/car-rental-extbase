@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Controller;
+namespace OliverHader\CarRentalA\Controller;
 
 /***
  * This file is part of the "Car Rental" Extension for TYPO3 CMS.
@@ -8,10 +8,10 @@ namespace HofUniversityIndie\CarRental\Controller;
  * LICENSE.txt file that was distributed with this source code.
  ***/
 
-use HofUniversityIndie\CarRental\Domain\Model\Brand;
-use HofUniversityIndie\CarRental\Domain\Model\Car;
-use HofUniversityIndie\CarRental\Domain\Repository\BrandRepository;
-use HofUniversityIndie\CarRental\Domain\Repository\CarRepository;
+use OliverHader\CarRentalA\Domain\Model\Brand;
+use OliverHader\CarRentalA\Domain\Model\Car;
+use OliverHader\CarRentalA\Domain\Repository\BrandRepository;
+use OliverHader\CarRentalA\Domain\Repository\CarRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
@@ -98,7 +98,7 @@ class ManagementController extends ActionController
 
     /**
      * @param Car $car
-     * @validate $car \HofUniversityIndie\CarRental\Validation\Car\ColorValidator
+     * @validate $car \OliverHader\CarRentalA\Validation\Car\ColorValidator
      */
     public function updateAction(Car $car)
     {

@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Service\Import;
+namespace OliverHader\CarRentalA\Service\Import;
 
 class CsvReader
 {

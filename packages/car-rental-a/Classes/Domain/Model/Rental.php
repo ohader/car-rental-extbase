@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Domain\Model;
+namespace OliverHader\CarRentalA\Domain\Model;
 
 /***
  * This file is part of the "Car Rental" Extension for TYPO3 CMS.
@@ -37,14 +37,14 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $returnDate = null;
 
     /**
-     * @var \HofUniversityIndie\CarRental\Domain\Model\Car
+     * @var \OliverHader\CarRentalA\Domain\Model\Car
      */
     protected $car;
 
     /**
      * customer
      *
-     * @var \HofUniversityIndie\CarRental\Domain\Model\Customer
+     * @var \OliverHader\CarRentalA\Domain\Model\Customer
      */
     protected $customer = null;
 
@@ -114,7 +114,7 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the customer
      *
-     * @return \HofUniversityIndie\CarRental\Domain\Model\Customer $customer
+     * @return \OliverHader\CarRentalA\Domain\Model\Customer $customer
      */
     public function getCustomer()
     {
@@ -124,10 +124,10 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the customer
      *
-     * @param \HofUniversityIndie\CarRental\Domain\Model\Customer $customer
+     * @param \OliverHader\CarRentalA\Domain\Model\Customer $customer
      * @return void
      */
-    public function setCustomer(\HofUniversityIndie\CarRental\Domain\Model\Customer $customer)
+    public function setCustomer(\OliverHader\CarRentalA\Domain\Model\Customer $customer)
     {
         $this->customer = $customer;
     }

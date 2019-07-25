@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Tests\Unit\Controller;
+namespace OliverHader\CarRentalA\Tests\Unit\Controller;
 
 /**
  * Test case.
@@ -9,13 +9,13 @@ namespace HofUniversityIndie\CarRental\Tests\Unit\Controller;
 class CarControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
 {
     /**
-     * @var \HofUniversityIndie\CarRental\Controller\CarController
+     * @var \OliverHader\CarRentalA\Controller\CarController
      */
     protected $subject = null;
 
     protected function setUp()
     {
-        $this->subject = $this->getMockBuilder(\HofUniversityIndie\CarRental\Controller\CarController::class)
+        $this->subject = $this->getMockBuilder(\OliverHader\CarRentalA\Controller\CarController::class)
             ->setMethods(['redirect', 'forward', 'addFlashMessage'])
             ->disableOriginalConstructor()
             ->getMock();
@@ -31,7 +31,7 @@ class CarControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $carRepository = $this->getMockBuilder(\HofUniversityIndie\CarRental\Domain\Repository\CarRepository::class)
+        $carRepository = $this->getMockBuilder(\OliverHader\CarRentalA\Domain\Repository\CarRepository::class)
             ->setMethods(['findAll'])
             ->disableOriginalConstructor()
             ->getMock();
@@ -50,7 +50,7 @@ class CarControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function showActionAssignsTheGivenCarToView()
     {
-        $car = new \HofUniversityIndie\CarRental\Domain\Model\Car();
+        $car = new \OliverHader\CarRentalA\Domain\Model\Car();
 
         $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
         $this->inject($this->subject, 'view', $view);

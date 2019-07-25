@@ -1,11 +1,11 @@
 <?php
-namespace HofUniversityIndie\CarRental\Service\Import;
+namespace OliverHader\CarRentalA\Service\Import;
 
-use HofUniversityIndie\CarRental\Domain\Model\Brand;
-use HofUniversityIndie\CarRental\Domain\Model\Car;
-use HofUniversityIndie\CarRental\Domain\Model\Tire;
-use HofUniversityIndie\CarRental\Domain\Repository\BrandRepository;
-use HofUniversityIndie\CarRental\Domain\Repository\CarRepository;
+use OliverHader\CarRentalA\Domain\Model\Brand;
+use OliverHader\CarRentalA\Domain\Model\Car;
+use OliverHader\CarRentalA\Domain\Model\Tire;
+use OliverHader\CarRentalA\Domain\Repository\BrandRepository;
+use OliverHader\CarRentalA\Domain\Repository\CarRepository;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 

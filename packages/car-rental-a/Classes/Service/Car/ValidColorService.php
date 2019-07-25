@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Service\Car;
+namespace OliverHader\CarRentalA\Service\Car;
 
 class ValidColorService
 {

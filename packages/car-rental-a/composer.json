@@ -1,6 +1,7 @@
 {
-    "name": "hof-university-indie/car-rental",
+    "name": "oliver-hader/car-rental-a",
     "type": "typo3-cms-extension",
+    "version": "0.2.0",
     "description": "Car Rental TYPO3 example",
     "authors": [
         {
@@ -9,11 +10,11 @@
         }
     ],
     "require": {
-        "typo3/cms-core": "^8.7.1"
+        "typo3/cms-core": "^9.5"
     },
     "autoload": {
         "psr-4": {
-            "HofUniversityIndie\\CarRental\\": "Classes"
+            "OliverHader\\CarRentalA\\": "Classes"
         }
     }
 }

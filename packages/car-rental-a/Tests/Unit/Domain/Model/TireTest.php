@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Tests\Unit\Domain\Model;
+namespace OliverHader\CarRentalA\Tests\Unit\Domain\Model;
 
 /**
  * Test case.
@@ -9,13 +9,13 @@ namespace HofUniversityIndie\CarRental\Tests\Unit\Domain\Model;
 class TireTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
 {
     /**
-     * @var \HofUniversityIndie\CarRental\Domain\Model\Tire
+     * @var \OliverHader\CarRentalA\Domain\Model\Tire
      */
     protected $subject = null;
 
     protected function setUp()
     {
-        $this->subject = new \HofUniversityIndie\CarRental\Domain\Model\Tire();
+        $this->subject = new \OliverHader\CarRentalA\Domain\Model\Tire();
     }
 
     /**

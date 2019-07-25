@@ -1,7 +1,7 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_car',
+        'title' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_car',
         'label' => 'vin',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -17,7 +17,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'vin,color,images,brand,tires,rentals',
-        'iconfile' => 'EXT:car_rental/Resources/Public/Icons/tx_carrental_domain_model_car.gif'
+        'iconfile' => 'EXT:car_rental_a/Resources/Public/Icons/car.gif'
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, vin, color, images, brand, tires, rentals',
@@ -54,8 +54,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_carrental_domain_model_car',
-                'foreign_table_where' => 'AND tx_carrental_domain_model_car.pid=###CURRENT_PID### AND tx_carrental_domain_model_car.sys_language_uid IN (-1,0)',
+                'foreign_table' => 'tx_carrentala_domain_model_car',
+                'foreign_table_where' => 'AND tx_carrentala_domain_model_car.pid=###CURRENT_PID### AND tx_carrentala_domain_model_car.sys_language_uid IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [
@@ -117,7 +117,7 @@ return [
 
         'vin' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_car.vin',
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_car.vin',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -126,7 +126,7 @@ return [
         ],
         'color' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_car.color',
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_car.color',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -135,7 +135,7 @@ return [
         ],
         'images' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_car.images',
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_car.images',
             'config' => 
             \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'images',
@@ -183,20 +183,20 @@ return [
         ],
         'brand' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_car.brand',
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_car.brand',
             'config' => [
                 'type' => 'select',
-                'foreign_table' => 'tx_carrental_domain_model_brand',
+                'foreign_table' => 'tx_carrentala_domain_model_brand',
                 'minitems' => 0,
                 'maxitems' => 1,
             ],
         ],
         'tires' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_car.tires',
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_car.tires',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_carrental_domain_model_tire',
+                'foreign_table' => 'tx_carrentala_domain_model_tire',
                 'foreign_field' => 'car',
                 'maxitems' => 9999,
                 'appearance' => [
@@ -211,10 +211,10 @@ return [
         ],
         'rentals' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_car.rentals',
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_car.rentals',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_carrental_domain_model_rental',
+                'foreign_table' => 'tx_carrentala_domain_model_rental',
                 'foreign_field' => 'car',
                 'maxitems' => 9999,
                 'appearance' => [

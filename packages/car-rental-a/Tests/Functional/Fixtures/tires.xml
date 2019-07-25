@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dataset>
-	<tx_carrental_domain_model_tire>
+	<tx_carrentala_domain_model_tire>
 		<uid>1</uid>
 		<pid>1</pid>
 		<deleted>0</deleted>
@@ -8,8 +8,8 @@
 		<car>1</car>
 		<tread_depth>8.0</tread_depth>
 		<pressure>3.0</pressure>
-	</tx_carrental_domain_model_tire>
-	<tx_carrental_domain_model_tire>
+	</tx_carrentala_domain_model_tire>
+	<tx_carrentala_domain_model_tire>
 		<uid>2</uid>
 		<pid>1</pid>
 		<deleted>0</deleted>
@@ -17,8 +17,8 @@
 		<car>1</car>
 		<tread_depth>8.0</tread_depth>
 		<pressure>3.0</pressure>
-	</tx_carrental_domain_model_tire>
-	<tx_carrental_domain_model_tire>
+	</tx_carrentala_domain_model_tire>
+	<tx_carrentala_domain_model_tire>
 		<uid>3</uid>
 		<pid>1</pid>
 		<deleted>0</deleted>
@@ -26,8 +26,8 @@
 		<car>1</car>
 		<tread_depth>8.0</tread_depth>
 		<pressure>3.0</pressure>
-	</tx_carrental_domain_model_tire>
-	<tx_carrental_domain_model_tire>
+	</tx_carrentala_domain_model_tire>
+	<tx_carrentala_domain_model_tire>
 		<uid>4</uid>
 		<pid>1</pid>
 		<deleted>0</deleted>
@@ -35,5 +35,5 @@
 		<car>1</car>
 		<tread_depth>8.0</tread_depth>
 		<pressure>3.0</pressure>
-	</tx_carrental_domain_model_tire>
+	</tx_carrentala_domain_model_tire>
 </dataset>

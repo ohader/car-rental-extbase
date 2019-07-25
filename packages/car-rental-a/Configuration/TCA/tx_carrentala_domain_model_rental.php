@@ -1,7 +1,7 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_rental',
+        'title' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_rental',
         'label' => 'start_date',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -17,7 +17,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'start_date,end_date,return_date,customer',
-        'iconfile' => 'EXT:car_rental/Resources/Public/Icons/tx_carrental_domain_model_rental.gif'
+        'iconfile' => 'EXT:car_rental_a/Resources/Public/Icons/rental.gif'
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, start_date, end_date, return_date, customer',
@@ -54,8 +54,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_carrental_domain_model_rental',
-                'foreign_table_where' => 'AND tx_carrental_domain_model_rental.pid=###CURRENT_PID### AND tx_carrental_domain_model_rental.sys_language_uid IN (-1,0)',
+                'foreign_table' => 'tx_carrentala_domain_model_rental',
+                'foreign_table_where' => 'AND tx_carrentala_domain_model_rental.pid=###CURRENT_PID### AND tx_carrentala_domain_model_rental.sys_language_uid IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [
@@ -117,7 +117,7 @@ return [
 
         'start_date' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_rental.start_date',
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_rental.start_date',
             'config' => [
                 'dbType' => 'datetime',
                 'type' => 'input',
@@ -129,7 +129,7 @@ return [
         ],
         'end_date' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_rental.end_date',
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_rental.end_date',
             'config' => [
                 'dbType' => 'datetime',
                 'type' => 'input',
@@ -141,7 +141,7 @@ return [
         ],
         'return_date' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_rental.return_date',
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_rental.return_date',
             'config' => [
                 'dbType' => 'datetime',
                 'type' => 'input',
@@ -153,10 +153,10 @@ return [
         ],
         'customer' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:car_rental/Resources/Private/Language/locallang_db.xlf:tx_carrental_domain_model_rental.customer',
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_rental.customer',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_carrental_domain_model_customer',
+                'foreign_table' => 'tx_carrentala_domain_model_customer',
                 'minitems' => 0,
                 'maxitems' => 1,
                 'appearance' => [

@@ -1,9 +1,9 @@
 <?php
-namespace HofUniversityIndie\CarRental\Command;
+namespace OliverHader\CarRentalA\Command;
 
-use HofUniversityIndie\CarRental\Service\Import\ConsumptionService;
-use HofUniversityIndie\CarRental\Service\Import\CsvReader;
-use HofUniversityIndie\CarRental\Service\Import\DataHandlerService;
+use OliverHader\CarRentalA\Service\Import\ConsumptionService;
+use OliverHader\CarRentalA\Service\Import\CsvReader;
+use OliverHader\CarRentalA\Service\Import\DataHandlerService;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

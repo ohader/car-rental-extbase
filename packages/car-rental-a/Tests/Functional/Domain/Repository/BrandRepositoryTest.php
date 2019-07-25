@@ -1,8 +1,8 @@
 <?php
-namespace HofUniversityIndie\CarRental\Tests\Functional\Domain\Repository;
+namespace OliverHader\CarRentalA\Tests\Functional\Domain\Repository;
 
-use HofUniversityIndie\CarRental\Domain\Model\Brand;
-use HofUniversityIndie\CarRental\Domain\Repository\BrandRepository;
+use OliverHader\CarRentalA\Domain\Model\Brand;
+use OliverHader\CarRentalA\Domain\Repository\BrandRepository;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
@@ -23,7 +23,7 @@ class ExtbaseServiceTest extends FunctionalTestCase
      * @var array
      */
     protected $testExtensionsToLoad = [
-        'typo3conf/ext/car_rental'
+        'typo3conf/ext/car_rental_a'
     ];
 
     protected function setUp()

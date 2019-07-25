@@ -1,7 +1,7 @@
 <?php
-namespace HofUniversityIndie\CarRental\ViewHelpers\Widget;
+namespace OliverHader\CarRentalA\ViewHelpers\Widget;
 
-use HofUniversityIndie\CarRental\Service\Car\ValidColorService;
+use OliverHader\CarRentalA\Service\Car\ValidColorService;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class ColorViewHelper extends AbstractViewHelper

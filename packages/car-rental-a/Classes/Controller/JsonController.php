@@ -1,8 +1,8 @@
 <?php
-namespace HofUniversityIndie\CarRental\Controller;
+namespace OliverHader\CarRentalA\Controller;
 
-use HofUniversityIndie\CarRental\Domain\Model\Car;
-use HofUniversityIndie\CarRental\Domain\Repository\CarRepository;
+use OliverHader\CarRentalA\Domain\Model\Car;
+use OliverHader\CarRentalA\Domain\Repository\CarRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;

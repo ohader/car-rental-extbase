@@ -382,10 +382,10 @@
             "targetVersion": "8.7.0-8.7.99",
             "version": "0.1.0"
         },
-        "extensionKey": "car_rental",
+        "extensionKey": "car_rental_a",
         "name": "Car Rental",
-        "originalExtensionKey": "car_rental",
-        "originalVendorName": "HofUniversityIndie",
+        "originalExtensionKey": "car_rental_a",
+        "originalVendorName": "OliverHader",
         "persons": [
             {
                 "company": "",
@@ -406,7 +406,7 @@
                 "name": "Information"
             }
         ],
-        "vendorName": "HofUniversityIndie"
+        "vendorName": "OliverHader"
     },
     "wires": [
         {

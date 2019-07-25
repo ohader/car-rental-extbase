@@ -1,9 +1,9 @@
 <?php
-namespace HofUniversityIndie\CarRental\Command;
+namespace OliverHader\CarRentalA\Command;
 
-use HofUniversityIndie\CarRental\Service\Import\ConsumptionService;
-use HofUniversityIndie\CarRental\Service\Import\CsvReader;
-use HofUniversityIndie\CarRental\Service\Import\ExtbaseService;
+use OliverHader\CarRentalA\Service\Import\ConsumptionService;
+use OliverHader\CarRentalA\Service\Import\CsvReader;
+use OliverHader\CarRentalA\Service\Import\ExtbaseService;
 use TYPO3\CMS\Extbase\Mvc\Controller\CommandController;
 
 /***

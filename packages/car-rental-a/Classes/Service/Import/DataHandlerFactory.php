@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Service\Import;
+namespace OliverHader\CarRentalA\Service\Import;
 
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\DataHandling\DataHandler;

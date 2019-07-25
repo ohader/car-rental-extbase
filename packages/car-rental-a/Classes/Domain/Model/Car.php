@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Domain\Model;
+namespace OliverHader\CarRentalA\Domain\Model;
 
 /***
  *
@@ -44,14 +44,14 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * brand
      *
-     * @var \HofUniversityIndie\CarRental\Domain\Model\Brand
+     * @var \OliverHader\CarRentalA\Domain\Model\Brand
      */
     protected $brand = null;
 
     /**
      * tires
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\HofUniversityIndie\CarRental\Domain\Model\Tire>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Tire>
      * @cascade remove
      */
     protected $tires = null;
@@ -59,7 +59,7 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * rentals
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\HofUniversityIndie\CarRental\Domain\Model\Rental>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Rental>
      * @cascade remove
      */
     protected $rentals = null;
@@ -176,7 +176,7 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the brand
      *
-     * @return \HofUniversityIndie\CarRental\Domain\Model\Brand $brand
+     * @return \OliverHader\CarRentalA\Domain\Model\Brand $brand
      */
     public function getBrand()
     {
@@ -186,10 +186,10 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the brand
      *
-     * @param \HofUniversityIndie\CarRental\Domain\Model\Brand $brand
+     * @param \OliverHader\CarRentalA\Domain\Model\Brand $brand
      * @return void
      */
-    public function setBrand(\HofUniversityIndie\CarRental\Domain\Model\Brand $brand)
+    public function setBrand(\OliverHader\CarRentalA\Domain\Model\Brand $brand)
     {
         $this->brand = $brand;
     }
@@ -197,10 +197,10 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Adds a Tire
      *
-     * @param \HofUniversityIndie\CarRental\Domain\Model\Tire $tire
+     * @param \OliverHader\CarRentalA\Domain\Model\Tire $tire
      * @return void
      */
-    public function addTire(\HofUniversityIndie\CarRental\Domain\Model\Tire $tire)
+    public function addTire(\OliverHader\CarRentalA\Domain\Model\Tire $tire)
     {
         $this->tires->attach($tire);
     }
@@ -208,10 +208,10 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Removes a Tire
      *
-     * @param \HofUniversityIndie\CarRental\Domain\Model\Tire $tireToRemove The Tire to be removed
+     * @param \OliverHader\CarRentalA\Domain\Model\Tire $tireToRemove The Tire to be removed
      * @return void
      */
-    public function removeTire(\HofUniversityIndie\CarRental\Domain\Model\Tire $tireToRemove)
+    public function removeTire(\OliverHader\CarRentalA\Domain\Model\Tire $tireToRemove)
     {
         $this->tires->detach($tireToRemove);
     }
@@ -219,7 +219,7 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the tires
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\HofUniversityIndie\CarRental\Domain\Model\Tire> $tires
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Tire> $tires
      */
     public function getTires()
     {
@@ -229,7 +229,7 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the tires
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\HofUniversityIndie\CarRental\Domain\Model\Tire> $tires
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Tire> $tires
      * @return void
      */
     public function setTires(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tires)
@@ -240,10 +240,10 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Adds a Rental
      *
-     * @param \HofUniversityIndie\CarRental\Domain\Model\Rental $rental
+     * @param \OliverHader\CarRentalA\Domain\Model\Rental $rental
      * @return void
      */
-    public function addRental(\HofUniversityIndie\CarRental\Domain\Model\Rental $rental)
+    public function addRental(\OliverHader\CarRentalA\Domain\Model\Rental $rental)
     {
         $this->rentals->attach($rental);
     }
@@ -251,10 +251,10 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Removes a Rental
      *
-     * @param \HofUniversityIndie\CarRental\Domain\Model\Rental $rentalToRemove The Rental to be removed
+     * @param \OliverHader\CarRentalA\Domain\Model\Rental $rentalToRemove The Rental to be removed
      * @return void
      */
-    public function removeRental(\HofUniversityIndie\CarRental\Domain\Model\Rental $rentalToRemove)
+    public function removeRental(\OliverHader\CarRentalA\Domain\Model\Rental $rentalToRemove)
     {
         $this->rentals->detach($rentalToRemove);
     }
@@ -262,7 +262,7 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the rentals
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\HofUniversityIndie\CarRental\Domain\Model\Rental> $rentals
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Rental> $rentals
      */
     public function getRentals()
     {
@@ -272,7 +272,7 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the rentals
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\HofUniversityIndie\CarRental\Domain\Model\Rental> $rentals
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Rental> $rentals
      * @return void
      */
     public function setRentals(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $rentals)

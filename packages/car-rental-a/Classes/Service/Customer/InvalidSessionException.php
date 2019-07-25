@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Service\Customer;
+namespace OliverHader\CarRentalA\Service\Customer;
 
 class InvalidSessionException extends \RuntimeException
 {

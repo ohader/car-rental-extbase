@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2017-11-20T18:23:50Z" product-name="car_rental">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-11-20T18:23:50Z" product-name="car_rental_a">
 		<header/>
 		<body>
 			<trans-unit id="tread_depth.description">

@@ -1,8 +1,8 @@
 <?php
-namespace HofUniversityIndie\CarRental\Service\Customer;
+namespace OliverHader\CarRentalA\Service\Customer;
 
-use HofUniversityIndie\CarRental\Domain\Model\Customer;
-use HofUniversityIndie\CarRental\Domain\Repository\CustomerRepository;
+use OliverHader\CarRentalA\Domain\Model\Customer;
+use OliverHader\CarRentalA\Domain\Repository\CustomerRepository;
 use TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;

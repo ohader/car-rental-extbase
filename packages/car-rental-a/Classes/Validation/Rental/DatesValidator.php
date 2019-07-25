@@ -1,7 +1,7 @@
 <?php
-namespace HofUniversityIndie\CarRental\Validation\Rental;
+namespace OliverHader\CarRentalA\Validation\Rental;
 
-use HofUniversityIndie\CarRental\Domain\Model\Rental;
+use OliverHader\CarRentalA\Domain\Model\Rental;
 use TYPO3\CMS\Extbase\Validation\Error;
 use TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator;
 

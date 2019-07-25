@@ -1,8 +1,8 @@
 <?php
-namespace HofUniversityIndie\CarRental\Validation\Car;
+namespace OliverHader\CarRentalA\Validation\Car;
 
-use HofUniversityIndie\CarRental\Domain\Model\Car;
-use HofUniversityIndie\CarRental\Service\Car\ValidColorService;
+use OliverHader\CarRentalA\Domain\Model\Car;
+use OliverHader\CarRentalA\Service\Car\ValidColorService;
 use TYPO3\CMS\Extbase\Validation\Error;
 use TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator;
 

@@ -1,14 +1,14 @@
 <?php
-namespace HofUniversityIndie\CarRental\Service\Import;
+namespace OliverHader\CarRentalA\Service\Import;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\StringUtility;
 
 class DataHandlerService
 {
-    const TABLE_NAME_BRAND = 'tx_carrental_domain_model_brand';
-    const TABLE_NAME_CAR = 'tx_carrental_domain_model_car';
-    const TABLE_NAME_TIRE = 'tx_carrental_domain_model_tire';
+    const TABLE_NAME_BRAND = 'tx_carrentala_domain_model_brand';
+    const TABLE_NAME_CAR = 'tx_carrentala_domain_model_car';
+    const TABLE_NAME_TIRE = 'tx_carrentala_domain_model_tire';
 
     /**
      * @var DataHandlerFactory

@@ -1,7 +1,7 @@
 #
-# Table structure for table 'tx_carrental_domain_model_brand'
+# Table structure for table 'tx_carrentala_domain_model_brand'
 #
-CREATE TABLE tx_carrental_domain_model_brand (
+CREATE TABLE tx_carrentala_domain_model_brand (
 
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
@@ -39,9 +39,9 @@ CREATE TABLE tx_carrental_domain_model_brand (
 );
 
 #
-# Table structure for table 'tx_carrental_domain_model_car'
+# Table structure for table 'tx_carrentala_domain_model_car'
 #
-CREATE TABLE tx_carrental_domain_model_car (
+CREATE TABLE tx_carrentala_domain_model_car (
 
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
@@ -84,9 +84,9 @@ CREATE TABLE tx_carrental_domain_model_car (
 );
 
 #
-# Table structure for table 'tx_carrental_domain_model_tire'
+# Table structure for table 'tx_carrentala_domain_model_tire'
 #
-CREATE TABLE tx_carrental_domain_model_tire (
+CREATE TABLE tx_carrentala_domain_model_tire (
 
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
@@ -127,9 +127,9 @@ CREATE TABLE tx_carrental_domain_model_tire (
 );
 
 #
-# Table structure for table 'tx_carrental_domain_model_rental'
+# Table structure for table 'tx_carrentala_domain_model_rental'
 #
-CREATE TABLE tx_carrental_domain_model_rental (
+CREATE TABLE tx_carrentala_domain_model_rental (
 
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
@@ -172,9 +172,9 @@ CREATE TABLE tx_carrental_domain_model_rental (
 );
 
 #
-# Table structure for table 'tx_carrental_domain_model_customer'
+# Table structure for table 'tx_carrentala_domain_model_customer'
 #
-CREATE TABLE tx_carrental_domain_model_customer (
+CREATE TABLE tx_carrentala_domain_model_customer (
 
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
@@ -214,18 +214,18 @@ CREATE TABLE tx_carrental_domain_model_customer (
 );
 
 #
-# Table structure for table 'tx_carrental_domain_model_tire'
+# Table structure for table 'tx_carrentala_domain_model_tire'
 #
-CREATE TABLE tx_carrental_domain_model_tire (
+CREATE TABLE tx_carrentala_domain_model_tire (
 
 	car int(11) unsigned DEFAULT '0' NOT NULL,
 
 );
 
 #
-# Table structure for table 'tx_carrental_domain_model_rental'
+# Table structure for table 'tx_carrentala_domain_model_rental'
 #
-CREATE TABLE tx_carrental_domain_model_rental (
+CREATE TABLE tx_carrentala_domain_model_rental (
 
 	car int(11) unsigned DEFAULT '0' NOT NULL,
 

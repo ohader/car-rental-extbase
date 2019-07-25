@@ -1,12 +1,12 @@
 # the plugin. prefix indicates configuration dedicated for the TYPO3 frontend
-plugin.tx_carrental_information {
+plugin.tx_carrentala_information {
     view {
-        templateRootPaths.0 = EXT:car_rental/Resources/Private/Templates/
-        templateRootPaths.1 = {$plugin.tx_carrental_information.view.templateRootPath}
-        partialRootPaths.0 = EXT:car_rental/Resources/Private/Partials/
-        partialRootPaths.1 = {$plugin.tx_carrental_information.view.partialRootPath}
-        layoutRootPaths.0 = EXT:car_rental/Resources/Private/Layouts/
-        layoutRootPaths.1 = {$plugin.tx_carrental_information.view.layoutRootPath}
+        templateRootPaths.0 = EXT:car_rental_a/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_carrentala_information.view.templateRootPath}
+        partialRootPaths.0 = EXT:car_rental_a/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_carrentala_information.view.partialRootPath}
+        layoutRootPaths.0 = EXT:car_rental_a/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_carrentala_information.view.layoutRootPath}
     }
     persistence {
         storagePid = {$plugin.tx_carrental.persistence.storagePid}
@@ -29,11 +29,11 @@ plugin.tx_carrental_information {
     }
 }
 
-plugin.tx_carrental_rental {
+plugin.tx_carrentala_rental {
     view {
-        templateRootPaths.0 = EXT:car_rental/Resources/Private/Templates/
-        partialRootPaths.0 = EXT:car_rental/Resources/Private/Partials/
-        layoutRootPaths.0 = EXT:car_rental/Resources/Private/Layouts/
+        templateRootPaths.0 = EXT:car_rental_a/Resources/Private/Templates/
+        partialRootPaths.0 = EXT:car_rental_a/Resources/Private/Partials/
+        layoutRootPaths.0 = EXT:car_rental_a/Resources/Private/Layouts/
     }
     persistence {
         storagePid = {$plugin.tx_carrental.persistence.storagePid}
@@ -51,11 +51,11 @@ plugin.tx_carrental_rental {
     }
 }
 
-plugin.tx_carrental_management {
+plugin.tx_carrentala_management {
     view {
-        templateRootPaths.0 = EXT:car_rental/Resources/Private/Templates/
-        partialRootPaths.0 = EXT:car_rental/Resources/Private/Partials/
-        layoutRootPaths.0 = EXT:car_rental/Resources/Private/Layouts/
+        templateRootPaths.0 = EXT:car_rental_a/Resources/Private/Templates/
+        partialRootPaths.0 = EXT:car_rental_a/Resources/Private/Partials/
+        layoutRootPaths.0 = EXT:car_rental_a/Resources/Private/Layouts/
     }
     persistence {
         storagePid = {$plugin.tx_carrental.persistence.storagePid}
@@ -73,7 +73,7 @@ plugin.tx_carrental_management {
     }
 }
 
-plugin.tx_carrental_json {
+plugin.tx_carrentala_json {
     persistence {
         storagePid = {$plugin.tx_carrental.persistence.storagePid}
         #recursive = 1
@@ -104,6 +104,6 @@ carJsonPage {
         userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
         extensionName = CarRental
         pluginName = Json
-        vendorName = HofUniversityIndie
+        vendorName = OliverHader
     }
 }

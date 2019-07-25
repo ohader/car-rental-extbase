@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Tests\Unit\Domain\Model;
+namespace OliverHader\CarRentalA\Tests\Unit\Domain\Model;
 
 /**
  * Test case.
@@ -9,13 +9,13 @@ namespace HofUniversityIndie\CarRental\Tests\Unit\Domain\Model;
 class CarTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
 {
     /**
-     * @var \HofUniversityIndie\CarRental\Domain\Model\Car
+     * @var \OliverHader\CarRentalA\Domain\Model\Car
      */
     protected $subject = null;
 
     protected function setUp()
     {
-        $this->subject = new \HofUniversityIndie\CarRental\Domain\Model\Car();
+        $this->subject = new \OliverHader\CarRentalA\Domain\Model\Car();
     }
 
     /**
@@ -147,7 +147,7 @@ class CarTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function setBrandForBrandSetsBrand()
     {
-        $brandFixture = new \HofUniversityIndie\CarRental\Domain\Model\Brand();
+        $brandFixture = new \OliverHader\CarRentalA\Domain\Model\Brand();
         $this->subject->setBrand($brandFixture);
 
         self::assertAttributeEquals(
@@ -174,7 +174,7 @@ class CarTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function setTiresForObjectStorageContainingTireSetsTires()
     {
-        $tire = new \HofUniversityIndie\CarRental\Domain\Model\Tire();
+        $tire = new \OliverHader\CarRentalA\Domain\Model\Tire();
         $objectStorageHoldingExactlyOneTires = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $objectStorageHoldingExactlyOneTires->attach($tire);
         $this->subject->setTires($objectStorageHoldingExactlyOneTires);
@@ -191,7 +191,7 @@ class CarTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function addTireToObjectStorageHoldingTires()
     {
-        $tire = new \HofUniversityIndie\CarRental\Domain\Model\Tire();
+        $tire = new \OliverHader\CarRentalA\Domain\Model\Tire();
         $tiresObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['attach'])
             ->disableOriginalConstructor()
@@ -208,7 +208,7 @@ class CarTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function removeTireFromObjectStorageHoldingTires()
     {
-        $tire = new \HofUniversityIndie\CarRental\Domain\Model\Tire();
+        $tire = new \OliverHader\CarRentalA\Domain\Model\Tire();
         $tiresObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['detach'])
             ->disableOriginalConstructor()
@@ -237,7 +237,7 @@ class CarTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function setRentalsForObjectStorageContainingRentalSetsRentals()
     {
-        $rental = new \HofUniversityIndie\CarRental\Domain\Model\Rental();
+        $rental = new \OliverHader\CarRentalA\Domain\Model\Rental();
         $objectStorageHoldingExactlyOneRentals = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $objectStorageHoldingExactlyOneRentals->attach($rental);
         $this->subject->setRentals($objectStorageHoldingExactlyOneRentals);
@@ -254,7 +254,7 @@ class CarTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function addRentalToObjectStorageHoldingRentals()
     {
-        $rental = new \HofUniversityIndie\CarRental\Domain\Model\Rental();
+        $rental = new \OliverHader\CarRentalA\Domain\Model\Rental();
         $rentalsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['attach'])
             ->disableOriginalConstructor()
@@ -271,7 +271,7 @@ class CarTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function removeRentalFromObjectStorageHoldingRentals()
     {
-        $rental = new \HofUniversityIndie\CarRental\Domain\Model\Rental();
+        $rental = new \OliverHader\CarRentalA\Domain\Model\Rental();
         $rentalsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['detach'])
             ->disableOriginalConstructor()

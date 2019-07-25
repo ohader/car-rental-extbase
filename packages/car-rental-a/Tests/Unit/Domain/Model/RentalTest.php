@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Tests\Unit\Domain\Model;
+namespace OliverHader\CarRentalA\Tests\Unit\Domain\Model;
 
 /**
  * Test case.
@@ -9,13 +9,13 @@ namespace HofUniversityIndie\CarRental\Tests\Unit\Domain\Model;
 class RentalTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
 {
     /**
-     * @var \HofUniversityIndie\CarRental\Domain\Model\Rental
+     * @var \OliverHader\CarRentalA\Domain\Model\Rental
      */
     protected $subject = null;
 
     protected function setUp()
     {
-        $this->subject = new \HofUniversityIndie\CarRental\Domain\Model\Rental();
+        $this->subject = new \OliverHader\CarRentalA\Domain\Model\Rental();
     }
 
     /**
@@ -112,7 +112,7 @@ class RentalTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function setCustomerForCustomerSetsCustomer()
     {
-        $customerFixture = new \HofUniversityIndie\CarRental\Domain\Model\Customer();
+        $customerFixture = new \OliverHader\CarRentalA\Domain\Model\Customer();
         $this->subject->setCustomer($customerFixture);
 
         self::assertAttributeEquals(

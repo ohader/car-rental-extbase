@@ -1,5 +1,5 @@
 <?php
-namespace HofUniversityIndie\CarRental\Domain\Model;
+namespace OliverHader\CarRentalA\Domain\Model;
 
 /***
  *
