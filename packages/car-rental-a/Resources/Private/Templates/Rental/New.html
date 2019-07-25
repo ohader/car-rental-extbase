@@ -1,0 +1,49 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+
+	<f:section name="content">
+		<div class="media">
+			<div class="media-left">
+				<f:link.action action="show" arguments="{car:car}">
+					<f:if condition="{car.images}">
+						<f:then>
+							<f:image image="{car.images.0}" width="160" maxHeight="160" class="media-object" />
+						</f:then>
+						<f:else>
+							<img src="{f:uri.resource(path:'Images/no-image-car.svg')}" width="160">
+						</f:else>
+					</f:if>
+				</f:link.action>
+			</div>
+			<div class="media-body">
+				<h4 class="media-heading">
+					<f:link.action action="show" arguments="{car:car}">{car.brand.name}: {car.vin}</f:link.action>
+				</h4>
+				<ul>
+					<li>color: {car.color}</li>
+					<li>tires: {car.tires -> f:count()}</li>
+				</ul>
+			</div>
+		</div>
+
+		<f:form action="create" object="{rental}" name="rental" arguments="{car:car}">
+			<div class="input-group">
+				<f:form.textfield property="startDate" value="{rental.startDate -> f:format.date(format:'Y-m-d')}"
+													class="form-control" placeholder="YYYY-mm-dd" type="date"
+													additionalAttributes="{'aria-describedby': 'rental-addon-startDate'}" />
+				<span class="input-group-addon" id="rental-addon-startDate">
+					<span class="glyphicon glyphicon-arrow-right"></span>
+				</span>
+			</div>
+			<div class="input-group">
+				<f:form.textfield property="endDate" value="{rental.endDate -> f:format.date(format:'Y-m-d')}"
+													class="form-control" placeholder="YYYY-mm-dd" type="date"
+													additionalAttributes="{'aria-describedby': 'rental-addon-endDate'}" />
+				<span class="input-group-addon" id="rental-addon-endDate">
+					<span class="glyphicon glyphicon-arrow-left"></span>
+				</span>
+			</div>
+			<f:form.submit class="btn btn-success" value="rent" />
+		</f:form>
+	</f:section>
+</html>

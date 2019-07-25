@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+			xmlns:car="http://typo3.org/ns/HofUniversityIndie/CarRental/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<f:form action="update" object="{car}" name="car">
+	<div class="input-group">
+		<f:form.select property="brand"
+									 		options="{brands}" optionLabelField="name" class="form-control"
+											additionalAttributes="{'aria-describedby': 'car-addon-brand'}" />
+		<span class="input-group-addon" id="car-addon-brand">Brand</span>
+	</div>
+	<f:render partial="Common/ValidationErrors" arguments="{property:'car.brand'}" />
+
+	<div class="input-group">
+		<f:form.textfield property="vin"
+											class="form-control" placeholder="vehicle identification number"
+											additionalAttributes="{'aria-describedby': 'car-addon-vin'}" />
+		<span class="input-group-addon" id="car-addon-vin">VIN</span>
+	</div>
+	<f:render partial="Common/ValidationErrors" arguments="{property:'car.vin'}" />
+
+	<div class="input-group">
+		<f:form.textfield property="color"
+											class="form-control" placeholder="color"
+											additionalAttributes="{'aria-describedby': 'car-addon-color'}" />
+		<span class="input-group-addon" id="car-addon-color">Color</span>
+	</div>
+	<f:render partial="Common/ValidationErrors" arguments="{property:'car.color'}" />
+
+	<f:form.submit value="Submit" class="btn btn-warning" />
+</f:form>
+
+</html>

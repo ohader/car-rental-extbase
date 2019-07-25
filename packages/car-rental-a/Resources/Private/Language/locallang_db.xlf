@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-11-20T18:23:50Z" product-name="car_rental">
+		<header/>
+		<body>
+			<trans-unit id="tx_carrental_domain_model_brand">
+				<source>Brand</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_brand.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_car">
+				<source>Car</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_car.vin">
+				<source>Vin</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_car.color">
+				<source>Color</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_car.images">
+				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_car.brand">
+				<source>Brand</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_car.tires">
+				<source>Tires</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_car.rentals">
+				<source>Rentals</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_tire">
+				<source>Tire</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_tire.tread_depth">
+				<source>Tread Depth</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_tire.pressure">
+				<source>Pressure</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_rental">
+				<source>Rental</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_rental.start_date">
+				<source>Start Date</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_rental.end_date">
+				<source>End Date</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_rental.return_date">
+				<source>Return Date</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_rental.customer">
+				<source>Customer</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_customer">
+				<source>Customer</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_customer.user">
+				<source>User</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_customer.first_name">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="tx_carrental_domain_model_customer.last_name">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="tx_car_rental_information.name">
+				<source>Information</source>
+			</trans-unit>
+			<trans-unit id="tx_car_rental_information.description">
+				<source>Information on cars</source>
+			</trans-unit>
+			<trans-unit id="tx_car_rental_rental.name">
+				<source>Rental</source>
+			</trans-unit>
+			<trans-unit id="tx_car_rental_rental.description">
+				<source>Rental overview &amp; checkout</source>
+			</trans-unit>
+			<trans-unit id="tx_car_rental_management.name">
+				<source>Management</source>
+			</trans-unit>
+			<trans-unit id="tx_car_rental_management.description">
+				<source>Management of cars</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
