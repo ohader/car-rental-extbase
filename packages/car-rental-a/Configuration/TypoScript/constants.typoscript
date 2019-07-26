@@ -1,4 +1,4 @@
-plugin.tx_carrental {
+plugin.tx_carrentala {
     persistence {
         # cat=plugin.tx_carrentala_information//a; type=string; label=Default storage PID
         storagePid =

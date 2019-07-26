@@ -1,19 +1,19 @@
 <?php
 namespace OliverHader\CarRentalA\Controller;
 
-use OliverHader\CarRentalA\Domain\Model\Car;
-use OliverHader\CarRentalA\Domain\Repository\CarRepository;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Domain\Model\FileReference;
-use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extbase\Mvc\View\JsonView;
-
 /***
  * This file is part of the "Car Rental" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  ***/
+
+use OliverHader\CarRentalA\Domain\Model\Car;
+use OliverHader\CarRentalA\Domain\Repository\CarRepository;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Mvc\View\JsonView;
 
 class JsonController extends ActionController
 {

@@ -24,7 +24,7 @@ plugin.tx_carrentala_information {
     }
     settings {
         pages {
-            rent = {$plugin.tx_carrental.settings.pages.rent}
+            rent = {$plugin.tx_carrentala.settings.pages.rent}
         }
     }
 }
@@ -36,7 +36,7 @@ plugin.tx_carrentala_rental {
         layoutRootPaths.0 = EXT:car_rental_a/Resources/Private/Layouts/
     }
     persistence {
-        storagePid = {$plugin.tx_carrental.persistence.storagePid}
+        storagePid = {$plugin.tx_carrentala.persistence.storagePid}
         #recursive = 1
     }
     features {
@@ -75,20 +75,20 @@ plugin.tx_carrentala_management {
 
 plugin.tx_carrentala_json {
     persistence {
-        storagePid = {$plugin.tx_carrental.persistence.storagePid}
+        storagePid = {$plugin.tx_carrentala.persistence.storagePid}
         #recursive = 1
     }
 }
 
 # the module. prefix indicates configuration dedicated for the TYPO3 backend
-module.tx_carrental {
+module.tx_carrentala {
     persistence {
-        storagePid = {$plugin.tx_carrental.persistence.storagePid}
+        storagePid = {$plugin.tx_carrentala.persistence.storagePid}
     }
 }
 
-carJsonPage = PAGE
-carJsonPage {
+carJsonPageA = PAGE
+carJsonPageA {
     config {
         disableAllHeaderCode = 1
         additionalHeaders {
@@ -102,7 +102,7 @@ carJsonPage {
     10 = USER
     10 {
         userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
-        extensionName = CarRental
+        extensionName = CarRentalA
         pluginName = Json
         vendorName = OliverHader
     }

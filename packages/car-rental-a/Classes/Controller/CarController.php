@@ -12,22 +12,21 @@ namespace OliverHader\CarRentalA\Controller;
  *
  ***/
 
+use TYPO3\CMS\Extbase\Annotation as Extbase;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+
 /**
  * CarController
  */
-class CarController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class CarController extends ActionController
 {
     /**
-     * carRepository
-     *
      * @var \OliverHader\CarRentalA\Domain\Repository\CarRepository
-     * @inject
+     * @Extbase\Inject
      */
     protected $carRepository = null;
 
     /**
-     * action list
-     *
      * @return void
      */
     public function listAction()
@@ -37,8 +36,6 @@ class CarController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     }
 
     /**
-     * action show
-     *
      * @param \OliverHader\CarRentalA\Domain\Model\Car $car
      * @return void
      */

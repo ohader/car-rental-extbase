@@ -1,6 +1,13 @@
 <?php
 namespace OliverHader\CarRentalA\Controller;
 
+/***
+ * This file is part of the "Car Rental" Extension for TYPO3 CMS.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ ***/
+
 use OliverHader\CarRentalA\Domain\Model\Car;
 use OliverHader\CarRentalA\Domain\Model\Customer;
 use OliverHader\CarRentalA\Domain\Model\Rental;
@@ -9,13 +16,6 @@ use OliverHader\CarRentalA\Service\Customer\InvalidSessionException;
 use OliverHader\CarRentalA\Service\Customer\SessionService;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter;
-
-/***
- * This file is part of the "Car Rental" Extension for TYPO3 CMS.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- ***/
 
 class RentalController extends ActionController
 {

@@ -18,47 +18,35 @@ namespace OliverHader\CarRentalA\Domain\Model;
 class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     /**
-     * Vehicle identification number
-     *
      * @var string
      * @validate NotEmpty
      */
     protected $vin = '';
 
     /**
-     * Color
-     *
      * @var string
      * @validate NotEmpty
      */
     protected $color = '';
 
     /**
-     * Images
-     *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      * @cascade remove
      */
     protected $images = null;
 
     /**
-     * brand
-     *
      * @var \OliverHader\CarRentalA\Domain\Model\Brand
      */
     protected $brand = null;
 
     /**
-     * tires
-     *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Tire>
      * @cascade remove
      */
     protected $tires = null;
 
     /**
-     * rentals
-     *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Rental>
      * @cascade remove
      */
@@ -89,8 +77,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the vin
-     *
      * @return string $vin
      */
     public function getVin()
@@ -99,8 +85,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the vin
-     *
      * @param string $vin
      * @return void
      */
@@ -110,8 +94,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the color
-     *
      * @return string $color
      */
     public function getColor()
@@ -120,8 +102,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the color
-     *
      * @param string $color
      * @return void
      */
@@ -131,8 +111,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Adds a FileReference
-     *
      * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
      * @return void
      */
@@ -142,8 +120,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Removes a FileReference
-     *
      * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $imageToRemove The FileReference to be removed
      * @return void
      */
@@ -153,8 +129,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the images
-     *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $images
      */
     public function getImages()
@@ -163,8 +137,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the images
-     *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $images
      * @return void
      */
@@ -174,8 +146,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the brand
-     *
      * @return \OliverHader\CarRentalA\Domain\Model\Brand $brand
      */
     public function getBrand()
@@ -184,8 +154,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the brand
-     *
      * @param \OliverHader\CarRentalA\Domain\Model\Brand $brand
      * @return void
      */
@@ -195,8 +163,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Adds a Tire
-     *
      * @param \OliverHader\CarRentalA\Domain\Model\Tire $tire
      * @return void
      */
@@ -206,8 +172,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Removes a Tire
-     *
      * @param \OliverHader\CarRentalA\Domain\Model\Tire $tireToRemove The Tire to be removed
      * @return void
      */
@@ -217,8 +181,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the tires
-     *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Tire> $tires
      */
     public function getTires()
@@ -227,8 +189,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the tires
-     *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Tire> $tires
      * @return void
      */
@@ -238,8 +198,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Adds a Rental
-     *
      * @param \OliverHader\CarRentalA\Domain\Model\Rental $rental
      * @return void
      */
@@ -249,8 +207,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Removes a Rental
-     *
      * @param \OliverHader\CarRentalA\Domain\Model\Rental $rentalToRemove The Rental to be removed
      * @return void
      */
@@ -260,8 +216,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the rentals
-     *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Rental> $rentals
      */
     public function getRentals()
@@ -270,8 +224,6 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the rentals
-     *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Rental> $rentals
      * @return void
      */

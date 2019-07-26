@@ -52,40 +52,7 @@ call_user_func(
 
         // add dedicated visualization in backend when "adding new content element"
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-            'mod {
-                wizards.newContentElement.wizardItems.plugins {
-                    elements {
-                        information {
-                            iconIdentifier = car_rental_a-plugin-information
-                            title = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_information.name
-                            description = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_information.description
-                            tt_content_defValues {
-                                CType = list
-                                list_type = carrental_information
-                            }
-                        }
-                        rent {
-                            iconIdentifier = car_rental_a-plugin-rental
-                            title = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_rental.name
-                            description = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_rental.description
-                            tt_content_defValues {
-                                CType = list
-                                list_type = carrental_rental
-                            }
-                        }
-                        management {
-                            iconIdentifier = car_rental_a-plugin-management
-                            title = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_management.name
-                            description = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_a_management.description
-                            tt_content_defValues {
-                                CType = list
-                                list_type = carrental_management
-                            }
-                        }
-                    }
-                    show = *
-                }
-           }'
+            '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:car_rental_a/Configuration/TSconfig/Page/All.tsconfig">'
         );
 
         // register different icons for different plugin-types, shown in backend

@@ -67,19 +67,19 @@
 				<source>Last Name</source>
 			</trans-unit>
 			<trans-unit id="tx_car_rental_a_information.name">
-				<source>Information</source>
+				<source>A: Information</source>
 			</trans-unit>
 			<trans-unit id="tx_car_rental_a_information.description">
 				<source>Information on cars</source>
 			</trans-unit>
 			<trans-unit id="tx_car_rental_a_rental.name">
-				<source>Rental</source>
+				<source>A: Rental</source>
 			</trans-unit>
 			<trans-unit id="tx_car_rental_a_rental.description">
 				<source>Rental overview &amp; checkout</source>
 			</trans-unit>
 			<trans-unit id="tx_car_rental_a_management.name">
-				<source>Management</source>
+				<source>A: Management</source>
 			</trans-unit>
 			<trans-unit id="tx_car_rental_a_management.description">
 				<source>Management of cars</source>

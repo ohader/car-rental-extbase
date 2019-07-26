@@ -18,16 +18,12 @@ namespace OliverHader\CarRentalA\Domain\Model;
 class Brand extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     /**
-     * Name
-     *
      * @var string
      * @validate NotEmpty
      */
     protected $name = '';
 
     /**
-     * Returns the name
-     *
      * @return string $name
      */
     public function getName()
@@ -36,8 +32,6 @@ class Brand extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the name
-     *
      * @param string $name
      * @return void
      */

@@ -2,7 +2,7 @@
 namespace OliverHader\CarRentalA\ViewHelpers\Widget;
 
 use OliverHader\CarRentalA\Service\Car\ValidColorService;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class ColorViewHelper extends AbstractViewHelper
 {
@@ -26,12 +26,19 @@ class ColorViewHelper extends AbstractViewHelper
         $this->validColorService = $validColorService;
     }
 
+    public function initializeArguments()
+    {
+        parent::initializeArguments();
+        $this->registerArgument('color', 'string', false, 'Color to be used in CSS');
+    }
+
     /**
-     * @param string|null $color
      * @return string
      */
-    public function render(string $color = null): string
+    public function render(): string
     {
+        $color = $this->arguments['color'] ?? null;
+
         if ($color === null) {
             $color = $this->renderChildren();
         }
