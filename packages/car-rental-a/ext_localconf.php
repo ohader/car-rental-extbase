@@ -9,7 +9,7 @@ call_user_func(
             'OliverHader.CarRentalA',
             'Information',
             [
-                'Car' => 'list, show'
+                'Car' => 'list, show, showMaintenance'
             ],
             // non-cacheable actions
             [

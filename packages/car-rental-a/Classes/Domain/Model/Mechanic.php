@@ -13,8 +13,8 @@ namespace OliverHader\CarRentalA\Domain\Model;
  ***/
 
 /**
- * Customer
+ * Mechanic
  */
-class Customer extends Employee
+class Mechanic extends Employee
 {
 }

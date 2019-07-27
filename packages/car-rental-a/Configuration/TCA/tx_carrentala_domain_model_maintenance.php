@@ -1,8 +1,8 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_brand',
-        'label' => 'name',
+        'title' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_maintenance',
+        'label' => 'issue_date',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -16,14 +16,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'name',
-        'iconfile' => 'EXT:car_rental_a/Resources/Public/Icons/brand.gif'
+        'searchFields' => 'issue_date,return_date,customer',
+        'iconfile' => 'EXT:car_rental_a/Resources/Public/Icons/maintenance.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, issue_date, mechanic',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, issue_date, mechanic, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -54,8 +54,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_carrentala_domain_model_brand',
-                'foreign_table_where' => 'AND tx_carrentala_domain_model_brand.pid=###CURRENT_PID### AND tx_carrentala_domain_model_brand.sys_language_uid IN (-1,0)',
+                'foreign_table' => 'tx_carrentala_domain_model_maintenance',
+                'foreign_table_where' => 'AND tx_carrentala_domain_model_maintenance.pid=###CURRENT_PID### AND tx_carrentala_domain_model_maintenance.sys_language_uid IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [
@@ -115,15 +115,35 @@ return [
             ],
         ],
 
-        'name' => [
+        'issue_date' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_brand.name',
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_maintenance.issue_date',
             'config' => [
+                'dbType' => 'datetime',
                 'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim,required'
+                'renderType' => 'inputDateTime',
+                'size' => 12,
+                'eval' => 'datetime,required',
+                'default' => '0000-00-00 00:00:00'
             ],
         ],
-    
+        'mechanic' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_maintenance.mechanic',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'fe_users',
+                'foreign_table_where' => 'AND fe_users.tx_extbase_type="' . str_replace('\\', '\\\\', \OliverHader\CarRentalA\Domain\Model\Mechanic::class) . '"',
+                'minitems' => 0,
+                'maxitems' => 1,
+            ],
+        ],
+
+        'car' => [
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
     ],
 ];

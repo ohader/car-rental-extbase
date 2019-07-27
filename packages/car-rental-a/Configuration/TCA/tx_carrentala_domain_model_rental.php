@@ -20,10 +20,10 @@ return [
         'iconfile' => 'EXT:car_rental_a/Resources/Public/Icons/rental.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, start_date, end_date, return_date, customer',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, start_date, end_date, return_date, customer, agent',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, start_date, end_date, return_date, customer, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, start_date, end_date, return_date, customer, agent, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -93,7 +93,7 @@ return [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
                 'size' => 13,
-                'eval' => 'datetime',
+                'eval' => 'datetime,int',
                 'default' => 0,
             ],
         ],
@@ -107,7 +107,7 @@ return [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
                 'size' => 13,
-                'eval' => 'datetime',
+                'eval' => 'datetime,int',
                 'default' => 0,
                 'range' => [
                     'upper' => mktime(0, 0, 0, 1, 1, 2038)
@@ -155,20 +155,27 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_rental.customer',
             'config' => [
-                'type' => 'inline',
-                'foreign_table' => 'tx_carrentala_domain_model_customer',
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'fe_users',
+                'foreign_table_where' => 'AND fe_users.tx_extbase_type="' . str_replace('\\', '\\\\', \OliverHader\CarRentalA\Domain\Model\Customer::class) . '"',
                 'minitems' => 0,
                 'maxitems' => 1,
-                'appearance' => [
-                    'collapseAll' => 0,
-                    'levelLinksPosition' => 'top',
-                    'showSynchronizationLink' => 1,
-                    'showPossibleLocalizationRecords' => 1,
-                    'showAllLocalizationLink' => 1
-                ],
             ],
         ],
-    
+        'agent' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_rental.agent',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'fe_users',
+                'foreign_table_where' => 'AND fe_users.tx_extbase_type="' . str_replace('\\', '\\\\', \OliverHader\CarRentalA\Domain\Model\Agent::class) . '"',
+                'minitems' => 0,
+                'maxitems' => 1,
+            ],
+        ],
+
         'car' => [
             'config' => [
                 'type' => 'passthrough',

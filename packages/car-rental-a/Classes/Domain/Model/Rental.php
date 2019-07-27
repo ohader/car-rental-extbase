@@ -14,24 +14,18 @@ namespace OliverHader\CarRentalA\Domain\Model;
 class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     /**
-     * Start date
-     *
      * @var \DateTime
      * @validate NotEmpty
      */
     protected $startDate = null;
 
     /**
-     * End date
-     *
      * @var \DateTime
      * @validate NotEmpty
      */
     protected $endDate = null;
 
     /**
-     * returnDate
-     *
      * @var \DateTime
      */
     protected $returnDate = null;
@@ -42,15 +36,16 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $car;
 
     /**
-     * customer
-     *
      * @var \OliverHader\CarRentalA\Domain\Model\Customer
      */
     protected $customer = null;
 
     /**
-     * Returns the startDate
-     *
+     * @var \OliverHader\CarRentalA\Domain\Model\Agent
+     */
+    protected $agent = null;
+
+    /**
      * @return \DateTime $startDate
      */
     public function getStartDate()
@@ -59,8 +54,6 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the startDate
-     *
      * @param \DateTime $startDate
      * @return void
      */
@@ -70,8 +63,6 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the endDate
-     *
      * @return \DateTime $endDate
      */
     public function getEndDate()
@@ -80,8 +71,6 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the endDate
-     *
      * @param \DateTime $endDate
      * @return void
      */
@@ -91,8 +80,6 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the returnDate
-     *
      * @return \DateTime $returnDate
      */
     public function getReturnDate()
@@ -101,8 +88,6 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the returnDate
-     *
      * @param \DateTime $returnDate
      * @return void
      */
@@ -112,8 +97,6 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the customer
-     *
      * @return \OliverHader\CarRentalA\Domain\Model\Customer $customer
      */
     public function getCustomer()
@@ -122,8 +105,6 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the customer
-     *
      * @param \OliverHader\CarRentalA\Domain\Model\Customer $customer
      * @return void
      */
@@ -146,5 +127,21 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setCar(Car $car)
     {
         $this->car = $car;
+    }
+
+    /**
+     * @return Agent
+     */
+    public function getAgent(): Agent
+    {
+        return $this->agent;
+    }
+
+    /**
+     * @param Agent $agent
+     */
+    public function setAgent(Agent $agent): void
+    {
+        $this->agent = $agent;
     }
 }

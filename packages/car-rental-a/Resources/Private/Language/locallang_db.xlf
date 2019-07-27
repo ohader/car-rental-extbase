@@ -9,6 +9,15 @@
 			<trans-unit id="tx_carrentala_domain_model_brand.name">
 				<source>Name</source>
 			</trans-unit>
+			<trans-unit id="tx_carrentala_domain_model_charge">
+				<source>Charge</source>
+			</trans-unit>
+			<trans-unit id="tx_carrentala_domain_model_charge.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_carrentala_domain_model_charge.price">
+				<source>Price</source>
+			</trans-unit>
 			<trans-unit id="tx_carrentala_domain_model_car">
 				<source>Car</source>
 			</trans-unit>
@@ -24,11 +33,17 @@
 			<trans-unit id="tx_carrentala_domain_model_car.brand">
 				<source>Brand</source>
 			</trans-unit>
+			<trans-unit id="tx_carrentala_domain_model_car.charge">
+				<source>Charge</source>
+			</trans-unit>
 			<trans-unit id="tx_carrentala_domain_model_car.tires">
 				<source>Tires</source>
 			</trans-unit>
 			<trans-unit id="tx_carrentala_domain_model_car.rentals">
 				<source>Rentals</source>
+			</trans-unit>
+			<trans-unit id="tx_carrentala_domain_model_car.maintenances">
+				<source>Maintenances</source>
 			</trans-unit>
 			<trans-unit id="tx_carrentala_domain_model_tire">
 				<source>Tire</source>
@@ -52,6 +67,18 @@
 				<source>Return Date</source>
 			</trans-unit>
 			<trans-unit id="tx_carrentala_domain_model_rental.customer">
+				<source>Customer</source>
+			</trans-unit>
+			<trans-unit id="tx_carrentala_domain_model_rental.agent">
+				<source>Agent</source>
+			</trans-unit>
+			<trans-unit id="tx_carrentala_domain_model_maintenance">
+				<source>Rental</source>
+			</trans-unit>
+			<trans-unit id="tx_carrentala_domain_model_maintenance.issue_date">
+				<source>Start Date</source>
+			</trans-unit>
+			<trans-unit id="tx_carrentala_domain_model_maintenance.mechanic">
 				<source>Customer</source>
 			</trans-unit>
 			<trans-unit id="tx_carrentala_domain_model_customer">

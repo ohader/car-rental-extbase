@@ -12,6 +12,7 @@ namespace OliverHader\CarRentalA\Controller;
  *
  ***/
 
+use OliverHader\CarRentalA\Domain\Model\Car;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
@@ -36,10 +37,19 @@ class CarController extends ActionController
     }
 
     /**
-     * @param \OliverHader\CarRentalA\Domain\Model\Car $car
+     * @param Car $car
      * @return void
      */
-    public function showAction(\OliverHader\CarRentalA\Domain\Model\Car $car)
+    public function showAction(Car $car)
+    {
+        $this->view->assign('car', $car);
+    }
+
+    /**
+     * @param Car $car
+     * @return void
+     */
+    public function showMaintenanceAction(Car $car)
     {
         $this->view->assign('car', $car);
     }

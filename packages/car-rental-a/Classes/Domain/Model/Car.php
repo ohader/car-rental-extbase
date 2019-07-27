@@ -41,6 +41,11 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $brand = null;
 
     /**
+     * @var \OliverHader\CarRentalA\Domain\Model\Charge
+     */
+    protected $charge = null;
+
+    /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Tire>
      * @cascade remove
      */
@@ -51,6 +56,12 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @cascade remove
      */
     protected $rentals = null;
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Maintenance>
+     * @cascade remove
+     */
+    protected $maintenances = null;
 
     /**
      * __construct
@@ -74,10 +85,11 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->images = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->tires = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->rentals = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->maintenances = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
-     * @return string $vin
+     * @return string
      */
     public function getVin()
     {
@@ -94,7 +106,7 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return string $color
+     * @return string
      */
     public function getColor()
     {
@@ -120,16 +132,16 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $imageToRemove The FileReference to be removed
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
      * @return void
      */
-    public function removeImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $imageToRemove)
+    public function removeImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
     {
-        $this->images->detach($imageToRemove);
+        $this->images->detach($image);
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $images
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      */
     public function getImages()
     {
@@ -146,7 +158,7 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return \OliverHader\CarRentalA\Domain\Model\Brand $brand
+     * @return \OliverHader\CarRentalA\Domain\Model\Brand
      */
     public function getBrand()
     {
@@ -163,6 +175,23 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
+     * @return \OliverHader\CarRentalA\Domain\Model\Charge
+     */
+    public function getCharge()
+    {
+        return $this->charge;
+    }
+
+    /**
+     * @param \OliverHader\CarRentalA\Domain\Model\Charge $charge
+     * @return void
+     */
+    public function setCharge(\OliverHader\CarRentalA\Domain\Model\Charge $charge)
+    {
+        $this->charge = $charge;
+    }
+
+    /**
      * @param \OliverHader\CarRentalA\Domain\Model\Tire $tire
      * @return void
      */
@@ -172,16 +201,16 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param \OliverHader\CarRentalA\Domain\Model\Tire $tireToRemove The Tire to be removed
+     * @param \OliverHader\CarRentalA\Domain\Model\Tire $tire
      * @return void
      */
-    public function removeTire(\OliverHader\CarRentalA\Domain\Model\Tire $tireToRemove)
+    public function removeTire(\OliverHader\CarRentalA\Domain\Model\Tire $tire)
     {
-        $this->tires->detach($tireToRemove);
+        $this->tires->detach($tire);
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Tire> $tires
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Tire>
      */
     public function getTires()
     {
@@ -207,16 +236,16 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param \OliverHader\CarRentalA\Domain\Model\Rental $rentalToRemove The Rental to be removed
+     * @param \OliverHader\CarRentalA\Domain\Model\Rental $rental
      * @return void
      */
-    public function removeRental(\OliverHader\CarRentalA\Domain\Model\Rental $rentalToRemove)
+    public function removeRental(\OliverHader\CarRentalA\Domain\Model\Rental $rental)
     {
-        $this->rentals->detach($rentalToRemove);
+        $this->rentals->detach($rental);
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Rental> $rentals
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Rental>
      */
     public function getRentals()
     {
@@ -230,5 +259,40 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setRentals(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $rentals)
     {
         $this->rentals = $rentals;
+    }
+
+    /**
+     * @param \OliverHader\CarRentalA\Domain\Model\Maintenance $maintenance
+     * @return void
+     */
+    public function addMaintenance(\OliverHader\CarRentalA\Domain\Model\Rental $maintenance)
+    {
+        $this->maintenances->attach($maintenance);
+    }
+
+    /**
+     * @param \OliverHader\CarRentalA\Domain\Model\Maintenance $maintenance
+     * @return void
+     */
+    public function removeMaintenance(\OliverHader\CarRentalA\Domain\Model\Maintenance $maintenance)
+    {
+        $this->maintenances->detach($maintenance);
+    }
+
+    /**
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Maintenance>
+     */
+    public function getMaintenances()
+    {
+        return $this->maintenances;
+    }
+
+    /**
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalA\Domain\Model\Maintenance> $maintenances
+     * @return void
+     */
+    public function setMaintenances(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $maintenances)
+    {
+        $this->maintenances = $maintenances;
     }
 }

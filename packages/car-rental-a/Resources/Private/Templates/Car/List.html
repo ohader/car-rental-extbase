@@ -33,18 +33,26 @@
 					<h4 class="media-heading">
 						<f:link.action action="show" arguments="{car:car}">{car.brand.name}: {car.vin}</f:link.action>
 					</h4>
-					<ul>
-						<li>color: {car.color}</li>
-						<li>tires: {car.tires -> f:count()}</li>
-					</ul>
+					<h6>
+						{car.charge.price -> f:format.currency(currencySign:'€')} per day
+					</h6>
+					<div>
+						Color: {car.color}
+					</div>
 					<f:link.action action="show" arguments="{car:car}" class="btn btn-default">
 						show details
 					</f:link.action>
 					<f:link.action pluginName="Rental" controller="Rental" action="new"
-												 arguments="{car:car}" pageUid="{settings.pages.rent}"
-												 class="btn btn-default">
+								   arguments="{car:car}" pageUid="{settings.pages.rent}"
+								   class="btn btn-default">
 						rent
 					</f:link.action>
+					<f:security.ifHasRole role="Mechanic">
+						<f:link.action pluginName="Information" controller="Car" action="showMaintenance"
+									   arguments="{car:car}" class="btn btn-default">
+							maintenance
+						</f:link.action>
+					</f:security.ifHasRole>
 				</div>
 			</div>
 		</f:for>

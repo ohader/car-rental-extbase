@@ -1,3 +1,24 @@
+config.tx_extbase.persistence.classes {
+    OliverHader\CarRentalA\Domain\Model\Agent {
+        mapping {
+            tableName = fe_users
+            recordType = OliverHader\CarRentalA\Domain\Model\Agent
+        }
+    }
+    OliverHader\CarRentalA\Domain\Model\Customer {
+        mapping {
+            tableName = fe_users
+            recordType = OliverHader\CarRentalA\Domain\Model\Customer
+        }
+    }
+    OliverHader\CarRentalA\Domain\Model\Mechanic {
+        mapping {
+            tableName = fe_users
+            recordType = OliverHader\CarRentalA\Domain\Model\Mechanic
+        }
+    }
+}
+
 # the plugin. prefix indicates configuration dedicated for the TYPO3 frontend
 plugin.tx_carrentala_information {
     view {
@@ -9,7 +30,7 @@ plugin.tx_carrentala_information {
         layoutRootPaths.1 = {$plugin.tx_carrentala_information.view.layoutRootPath}
     }
     persistence {
-        storagePid = {$plugin.tx_carrental.persistence.storagePid}
+        #storagePid = {$plugin.tx_carrental.persistence.storagePid}
         #recursive = 1
     }
     features {
@@ -36,7 +57,7 @@ plugin.tx_carrentala_rental {
         layoutRootPaths.0 = EXT:car_rental_a/Resources/Private/Layouts/
     }
     persistence {
-        storagePid = {$plugin.tx_carrentala.persistence.storagePid}
+        #storagePid = {$plugin.tx_carrentala.persistence.storagePid}
         #recursive = 1
     }
     features {
@@ -58,7 +79,7 @@ plugin.tx_carrentala_management {
         layoutRootPaths.0 = EXT:car_rental_a/Resources/Private/Layouts/
     }
     persistence {
-        storagePid = {$plugin.tx_carrental.persistence.storagePid}
+        #storagePid = {$plugin.tx_carrental.persistence.storagePid}
         #recursive = 1
     }
     features {
@@ -75,7 +96,7 @@ plugin.tx_carrentala_management {
 
 plugin.tx_carrentala_json {
     persistence {
-        storagePid = {$plugin.tx_carrentala.persistence.storagePid}
+        #storagePid = {$plugin.tx_carrentala.persistence.storagePid}
         #recursive = 1
     }
 }
@@ -83,7 +104,7 @@ plugin.tx_carrentala_json {
 # the module. prefix indicates configuration dedicated for the TYPO3 backend
 module.tx_carrentala {
     persistence {
-        storagePid = {$plugin.tx_carrentala.persistence.storagePid}
+        #storagePid = {$plugin.tx_carrentala.persistence.storagePid}
     }
 }
 

@@ -16,14 +16,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'vin,color,images,brand,tires,rentals',
+        'searchFields' => 'vin,color,images,brand,charge,tires,rentals,maintenances',
         'iconfile' => 'EXT:car_rental_a/Resources/Public/Icons/car.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, vin, color, images, brand, tires, rentals',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, vin, color, images, brand, charge, tires, rentals, maintenances',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, vin, color, images, brand, tires, rentals, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, vin, color, images, brand, charge, tires, rentals, maintenances, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -93,7 +93,7 @@ return [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
                 'size' => 13,
-                'eval' => 'datetime',
+                'eval' => 'datetime,int',
                 'default' => 0,
             ],
         ],
@@ -107,7 +107,7 @@ return [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
                 'size' => 13,
-                'eval' => 'datetime',
+                'eval' => 'datetime,int',
                 'default' => 0,
                 'range' => [
                     'upper' => mktime(0, 0, 0, 1, 1, 2038)
@@ -191,6 +191,16 @@ return [
                 'maxitems' => 1,
             ],
         ],
+        'charge' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_car.charge',
+            'config' => [
+                'type' => 'select',
+                'foreign_table' => 'tx_carrentala_domain_model_charge',
+                'minitems' => 0,
+                'maxitems' => 1,
+            ],
+        ],
         'tires' => [
             'exclude' => true,
             'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_car.tires',
@@ -200,7 +210,8 @@ return [
                 'foreign_field' => 'car',
                 'maxitems' => 9999,
                 'appearance' => [
-                    'collapseAll' => 0,
+                    'collapseAll' => 1,
+                    'expandSingle' => 1,
                     'levelLinksPosition' => 'top',
                     'showSynchronizationLink' => 1,
                     'showPossibleLocalizationRecords' => 1,
@@ -218,7 +229,8 @@ return [
                 'foreign_field' => 'car',
                 'maxitems' => 9999,
                 'appearance' => [
-                    'collapseAll' => 0,
+                    'collapseAll' => 1,
+                    'expandSingle' => 1,
                     'levelLinksPosition' => 'top',
                     'showSynchronizationLink' => 1,
                     'showPossibleLocalizationRecords' => 1,
@@ -227,6 +239,25 @@ return [
             ],
 
         ],
-    
+        'maintenances' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_carrentala_domain_model_car.maintenances',
+            'config' => [
+                'type' => 'inline',
+                'foreign_table' => 'tx_carrentala_domain_model_maintenance',
+                'foreign_field' => 'car',
+                'maxitems' => 9999,
+                'appearance' => [
+                    'collapseAll' => 1,
+                    'expandSingle' => 1,
+                    'levelLinksPosition' => 'top',
+                    'showSynchronizationLink' => 1,
+                    'showPossibleLocalizationRecords' => 1,
+                    'showAllLocalizationLink' => 1
+                ],
+            ],
+
+        ],
+
     ],
 ];
