@@ -28,6 +28,18 @@ class CarController extends ActionController
     protected $carRepository = null;
 
     /**
+     * @var \OliverHader\CarRentalA\Domain\Repository\BrandRepository
+     * @Extbase\Inject
+     */
+    protected $brandRepository = null;
+
+    /**
+     * @var \OliverHader\CarRentalA\Domain\Repository\RentalRepository
+     * @Extbase\Inject
+     */
+    protected $rentalRepository = null;
+
+    /**
      * @return void
      */
     public function listAction()
