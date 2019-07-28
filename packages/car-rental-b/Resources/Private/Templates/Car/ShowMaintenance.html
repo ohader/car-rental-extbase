@@ -1,0 +1,40 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+
+	This Template is responsible for displaying a single view for a domain object
+
+	If you modify this template, do not forget to change the overwrite settings
+	in /Configuration/ExtensionBuilder/settings.yaml:
+	  Resources:
+		Private:
+		  Templates:
+			Show.html: keep
+
+	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+	<f:section name="content">
+		<h1>Maintenance View for Car</h1>
+
+		<div>
+			<ul>
+				<li>Brand: {car.brand.name}</li>
+				<li>VIN: {car.vin}</li>
+				<li>Color: {car.color}</li>
+				<li>Tires: {car.tires -> f:count()}</li>
+				<ul>
+					<f:for each="{car.tires}" as="tire" iteration="iteration">
+						<li>#{iteration.cycle}: {tire.treadDepth -> f:format.number(decimals:2)} mm, {tire.pressure -> f:format.number(decimals:2)} bar</li>
+					</f:for>
+				</ul>
+				<li>Maintenances: {car.maintenances -> f:count()}</li>
+				<ul>
+					<f:for each="{car.maintenances}" as="maintenance" iteration="iteration">
+						<li>#{iteration.cycle}: {maintenance.issueDate -> f:format.date(format:'Y-m-d')} by {maintenance.mechanic.name} ({maintenance.mechanic.employeeNumber})</li>
+					</f:for>
+				</ul>
+			</ul>
+		</div>
+
+		<f:link.action action="list">Back to list</f:link.action><br />
+	</f:section>
+</html>

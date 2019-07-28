@@ -1,0 +1,34 @@
+mod {
+    wizards.newContentElement.wizardItems.plugins {
+        elements {
+            information {
+                iconIdentifier = car_rental_b-plugin-information
+                title = LLL:EXT:car_rental_b/Resources/Private/Language/locallang_db.xlf:tx_car_rental_b_information.name
+                description = LLL:EXT:car_rental_b/Resources/Private/Language/locallang_db.xlf:tx_car_rental_b_information.description
+                tt_content_defValues {
+                    CType = list
+                    list_type = carrental_information
+                }
+            }
+            rent {
+                iconIdentifier = car_rental_b-plugin-rental
+                title = LLL:EXT:car_rental_b/Resources/Private/Language/locallang_db.xlf:tx_car_rental_b_rental.name
+                description = LLL:EXT:car_rental_b/Resources/Private/Language/locallang_db.xlf:tx_car_rental_b_rental.description
+                tt_content_defValues {
+                    CType = list
+                    list_type = carrental_rental
+                }
+            }
+            management {
+                iconIdentifier = car_rental_b-plugin-management
+                title = LLL:EXT:car_rental_b/Resources/Private/Language/locallang_db.xlf:tx_car_rental_b_management.name
+                description = LLL:EXT:car_rental_b/Resources/Private/Language/locallang_db.xlf:tx_car_rental_b_management.description
+                tt_content_defValues {
+                    CType = list
+                    list_type = carrental_management
+                }
+            }
+        }
+        show = *
+    }
+}

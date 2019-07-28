@@ -1,0 +1,2 @@
+* no-image-car.svg: https://upload.wikimedia.org/wikipedia/commons/e/ec/Ic_directions_car_48px.svg
+* no-image-car.png: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Ic_directions_car_48px.svg/1000px-Ic_directions_car_48px.svg.png

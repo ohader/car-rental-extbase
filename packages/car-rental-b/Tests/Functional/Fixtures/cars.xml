@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataset>
+	<tx_carrentalb_domain_model_car>
+		<uid>1</uid>
+		<pid>1</pid>
+		<deleted>0</deleted>
+		<hidden>0</hidden>
+		<vin>VIN</vin>
+		<color>COLOR</color>
+		<brand>1</brand>
+		<tires>4</tires>
+	</tx_carrentalb_domain_model_car>
+</dataset>

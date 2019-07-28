@@ -1,0 +1,20 @@
+{
+    "name": "oliver-hader/car-rental-b",
+    "type": "typo3-cms-extension",
+    "version": "0.2.0",
+    "description": "Car Rental TYPO3 example",
+    "authors": [
+        {
+            "name": "Oliver Hader",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "OliverHader\\CarRentalB\\": "Classes"
+        }
+    }
+}

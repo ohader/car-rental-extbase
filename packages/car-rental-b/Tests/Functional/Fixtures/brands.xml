@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataset>
+	<tx_carrentalb_domain_model_brand>
+		<uid>1</uid>
+		<pid>1</pid>
+		<deleted>0</deleted>
+		<hidden>0</hidden>
+		<name>Special Brand</name>
+	</tx_carrentalb_domain_model_brand>
+</dataset>
