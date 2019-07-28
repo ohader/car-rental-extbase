@@ -111,8 +111,11 @@ class Car extends AbstractEntity implements CarInterface
     /**
      * @return \OliverHader\CarRentalB\Domain\Model\Common\Brand
      */
-    public function getBrand()
+    public function getBrand(): \OliverHader\CarRentalB\Domain\Model\Common\Brand
     {
+        if ($this->brand instanceof \OliverHader\CarRentalB\Domain\Model\Common\Brand) {
+            return $this->brand;
+        }
         // @todo Fluid's VariableExtractor does not know the concept of Extbase's LazyLoadingProxy magic
         return $this->brand->_loadRealInstance();
     }
