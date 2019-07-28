@@ -12,19 +12,19 @@ call_user_func(
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
             'OliverHader.CarRentalB',
             'Information',
-            'Information',
+            'B: Information',
             'car_rental_b-plugin-information'
         );
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
             'OliverHader.CarRentalB',
             'Rental',
-            'Rental',
+            'B: Rental',
             'car_rental_b-plugin-rental'
         );
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
             'OliverHader.CarRentalB',
             'Management',
-            'Management',
+            'B: Management',
             'car_rental_b-plugin-management'
         );
 

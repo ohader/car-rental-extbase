@@ -1,20 +1,58 @@
 config.tx_extbase.persistence.classes {
-    OliverHader\CarRentalB\Domain\Model\Agent {
+    OliverHader\CarRentalB\Domain\Model\Rental\Agent {
         mapping {
             tableName = fe_users
-            recordType = OliverHader\CarRentalB\Domain\Model\Agent
+            recordType = car-rental-agent
         }
     }
-    OliverHader\CarRentalB\Domain\Model\Customer {
+    OliverHader\CarRentalB\Domain\Model\Rental\Customer {
         mapping {
             tableName = fe_users
-            recordType = OliverHader\CarRentalB\Domain\Model\Customer
+            recordType = car-rental-customer
         }
     }
-    OliverHader\CarRentalB\Domain\Model\Mechanic {
+    OliverHader\CarRentalB\Domain\Model\Maintenance\Mechanic {
         mapping {
             tableName = fe_users
-            recordType = OliverHader\CarRentalB\Domain\Model\Mechanic
+            recordType = car-rental-mechanic
+        }
+    }
+
+    OliverHader\CarRentalB\Domain\Model\Common\Brand {
+        mapping {
+            tableName = tx_carrentalb_domain_model_brand
+        }
+    }
+
+    OliverHader\CarRentalB\Domain\Model\Maintenance\Car {
+        mapping {
+            tableName = tx_carrentalb_domain_model_car
+        }
+    }
+    OliverHader\CarRentalB\Domain\Model\Maintenance\Maintenance {
+        mapping {
+            tableName = tx_carrentalb_domain_model_maintenance
+        }
+    }
+    OliverHader\CarRentalB\Domain\Model\Maintenance\Tire {
+        mapping {
+            tableName = tx_carrentalb_domain_model_tire
+        }
+    }
+
+    OliverHader\CarRentalB\Domain\Model\Rental\Car {
+        mapping {
+            tableName = tx_carrentalb_domain_model_car
+        }
+    }
+    OliverHader\CarRentalB\Domain\Model\Rental\Charge {
+        mapping {
+            tableName = tx_carrentalb_domain_model_charge
+        }
+    }
+    OliverHader\CarRentalB\Domain\Model\Rental\Rental {
+        mapping {
+            tableName = tx_carrentalb_domain_model_rental
         }
     }
 }

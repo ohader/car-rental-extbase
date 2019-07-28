@@ -1,6 +1,8 @@
 <?php
 namespace OliverHader\CarRentalB\Domain\Model\Rental;
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+
 /***
  * This file is part of the "Car Rental" Extension for TYPO3 CMS.
  *
@@ -11,7 +13,7 @@ namespace OliverHader\CarRentalB\Domain\Model\Rental;
 /**
  * Rental
  */
-class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Rental extends AbstractEntity
 {
     /**
      * @var \DateTime
@@ -31,17 +33,17 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $returnDate = null;
 
     /**
-     * @var \OliverHader\CarRentalB\Domain\Model\Car
+     * @var \OliverHader\CarRentalB\Domain\Model\Rental\Car
      */
     protected $car;
 
     /**
-     * @var \OliverHader\CarRentalB\Domain\Model\Customer
+     * @var \OliverHader\CarRentalB\Domain\Model\Rental\Customer
      */
     protected $customer = null;
 
     /**
-     * @var \OliverHader\CarRentalB\Domain\Model\Agent
+     * @var \OliverHader\CarRentalB\Domain\Model\Rental\Agent
      */
     protected $agent = null;
 
@@ -97,7 +99,7 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return \OliverHader\CarRentalB\Domain\Model\Customer $customer
+     * @return \OliverHader\CarRentalB\Domain\Model\Rental\Customer $customer
      */
     public function getCustomer()
     {
@@ -105,10 +107,10 @@ class Rental extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param \OliverHader\CarRentalB\Domain\Model\Customer $customer
+     * @param \OliverHader\CarRentalB\Domain\Model\Rental\Customer $customer
      * @return void
      */
-    public function setCustomer(\OliverHader\CarRentalB\Domain\Model\Customer $customer)
+    public function setCustomer(\OliverHader\CarRentalB\Domain\Model\Rental\Customer $customer)
     {
         $this->customer = $customer;
     }

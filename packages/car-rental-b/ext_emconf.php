@@ -11,7 +11,7 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Car Rental',
+    'title' => 'Car Rental B',
     'description' => 'Car Rental TYPO3 example',
     'category' => 'plugin',
     'author' => 'Oliver Hader',

@@ -1,6 +1,8 @@
 <?php
 namespace OliverHader\CarRentalB\Domain\Model\Rental;
 
+use OliverHader\CarRentalB\Domain\Model\Common\Employee;
+
 /***
  *
  * This file is part of the "Car Rental" Extension for TYPO3 CMS.
