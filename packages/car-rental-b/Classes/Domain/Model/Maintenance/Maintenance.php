@@ -1,7 +1,9 @@
 <?php
 namespace OliverHader\CarRentalB\Domain\Model\Maintenance;
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 /***
  * This file is part of the "Car Rental" Extension for TYPO3 CMS.
@@ -15,6 +17,23 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  */
 class Maintenance extends AbstractEntity
 {
+    /**
+     * @param Car $car
+     * @param Mechanic $mechanic
+     * @param \DateTimeInterface|null $issueDate
+     * @return Maintenance
+     * @throws \Exception
+     */
+    static function create(Car $car, Mechanic $mechanic, \DateTimeInterface $issueDate = null)
+    {
+        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
+        $target = $objectManager->get(static::class);
+        $target->car = $car;
+        $target->mechanic = $mechanic;
+        $target->issueDate = $issueDate ?? new \DateTimeImmutable('now');
+        return $target;
+    }
+
     /**
      * Start date
      *

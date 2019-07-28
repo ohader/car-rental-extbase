@@ -14,6 +14,8 @@ namespace OliverHader\CarRentalB\Controller;
 
 use OliverHader\CarRentalB\Domain\Model\Rental;
 use OliverHader\CarRentalB\Domain\Model\Maintenance;
+use OliverHader\CarRentalB\Domain\Repository\Maintenance\MaintenanceRepository;
+use OliverHader\CarRentalB\Domain\Repository\Rental\CarRepository;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
@@ -23,17 +25,11 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class CarController extends ActionController
 {
     /**
-     * @var \OliverHader\CarRentalB\Domain\Repository\Rental\CarRepository
-     * @Extbase\Inject
-     */
-    protected $carRepository = null;
-
-    /**
      * @return void
      */
     public function listAction()
     {
-        $cars = $this->carRepository->findAll();
+        $cars = $this->getCarRepository()->findAll();
         $this->view->assign('cars', $cars);
     }
 
@@ -53,5 +49,22 @@ class CarController extends ActionController
     public function showMaintenanceAction(Maintenance\Car $car)
     {
         $this->view->assign('car', $car);
+        $this->view->assign('maintenances', $this->getMaintenanceRepository()->findByCar($car));
+    }
+
+    /**
+     * @return CarRepository
+     */
+    protected function getCarRepository(): CarRepository
+    {
+        return $this->objectManager->get(CarRepository::class);
+    }
+
+    /**
+     * @return MaintenanceRepository
+     */
+    protected function getMaintenanceRepository(): MaintenanceRepository
+    {
+        return $this->objectManager->get(MaintenanceRepository::class);
     }
 }

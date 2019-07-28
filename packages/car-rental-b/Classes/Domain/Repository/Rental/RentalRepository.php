@@ -14,32 +14,19 @@ use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * The repository for Cars
+ * The repository for Rentals
  */
-class CarRepository extends Repository
+class RentalRepository extends Repository
 {
     /**
-     * @param string $vin
+     * @param Car $car
      * @return QueryResultInterface|Car[]
      */
-    public function findByVin(string $vin)
+    public function findByCar(Car $car)
     {
         $query = $this->createQuery();
         $query->matching(
-            $query->equals('vin', $vin)
-        );
-        return $query->execute();
-    }
-
-    /**
-     * @param Brand $brand
-     * @return QueryResultInterface|Car[]
-     */
-    public function findByBrand(Brand $brand)
-    {
-        $query = $this->createQuery();
-        $query->matching(
-            $query->equals('brand', $brand)
+            $query->equals('car', $car)
         );
         return $query->execute();
     }

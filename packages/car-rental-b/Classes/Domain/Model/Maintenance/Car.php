@@ -46,12 +46,6 @@ class Car extends AbstractEntity implements CarInterface
     protected $tires = null;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalB\Domain\Model\Maintenance\Maintenance>
-     * @Extbase\ORM\Cascade("remove")
-     */
-    protected $maintenances = null;
-
-    /**
      * __construct
      */
     public function __construct()
@@ -162,40 +156,5 @@ class Car extends AbstractEntity implements CarInterface
     public function setTires(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tires)
     {
         $this->tires = $tires;
-    }
-
-    /**
-     * @param \OliverHader\CarRentalB\Domain\Model\Maintenance\Maintenance $maintenance
-     * @return void
-     */
-    public function addMaintenance(\OliverHader\CarRentalB\Domain\Model\Maintenance\Maintenance $maintenance)
-    {
-        $this->maintenances->attach($maintenance);
-    }
-
-    /**
-     * @param \OliverHader\CarRentalB\Domain\Model\Maintenance\Maintenance $maintenance
-     * @return void
-     */
-    public function removeMaintenance(\OliverHader\CarRentalB\Domain\Model\Maintenance\Maintenance $maintenance)
-    {
-        $this->maintenances->detach($maintenance);
-    }
-
-    /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalB\Domain\Model\Maintenance\Maintenance>
-     */
-    public function getMaintenances()
-    {
-        return $this->maintenances;
-    }
-
-    /**
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalB\Domain\Model\Maintenance\Maintenance> $maintenances
-     * @return void
-     */
-    public function setMaintenances(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $maintenances)
-    {
-        $this->maintenances = $maintenances;
     }
 }

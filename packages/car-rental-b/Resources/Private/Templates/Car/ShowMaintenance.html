@@ -28,7 +28,7 @@
 				</ul>
 				<li>Maintenances: {car.maintenances -> f:count()}</li>
 				<ul>
-					<f:for each="{car.maintenances}" as="maintenance" iteration="iteration">
+					<f:for each="{maintenances}" as="maintenance" iteration="iteration">
 						<li>#{iteration.cycle}: {maintenance.issueDate -> f:format.date(format:'Y-m-d')} by {maintenance.mechanic.name} ({maintenance.mechanic.employeeNumber})</li>
 					</f:for>
 				</ul>

@@ -10,36 +10,24 @@ namespace OliverHader\CarRentalB\Domain\Repository\Maintenance;
 
 use OliverHader\CarRentalB\Domain\Model\Common\Brand;
 use OliverHader\CarRentalB\Domain\Model\Maintenance\Car;
+use OliverHader\CarRentalB\Domain\Model\Maintenance\Maintenance;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * The repository for Cars
+ * The repository for Maintenances
  */
-class CarRepository extends Repository
+class MaintenanceRepository extends Repository
 {
     /**
-     * @param string $vin
-     * @return QueryResultInterface|\OliverHader\CarRentalB\Domain\Model\Rental\Car[]
+     * @param Car $car
+     * @return QueryResultInterface|Maintenance[]
      */
-    public function findByVin(string $vin)
+    public function findByCar(Car $car)
     {
         $query = $this->createQuery();
         $query->matching(
-            $query->equals('vin', $vin)
-        );
-        return $query->execute();
-    }
-
-    /**
-     * @param Brand $brand
-     * @return QueryResultInterface|Car[]
-     */
-    public function findByBrand(Brand $brand)
-    {
-        $query = $this->createQuery();
-        $query->matching(
-            $query->equals('brand', $brand)
+            $query->equals('car', $car)
         );
         return $query->execute();
     }
