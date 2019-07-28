@@ -2,6 +2,7 @@
 namespace OliverHader\CarRentalB\Domain\Model\Rental;
 
 use OliverHader\CarRentalB\Domain\Model\Common\CarInterface;
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /***
@@ -34,12 +35,14 @@ class Car extends AbstractEntity implements CarInterface
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @cascade remove
+     * @Extbase\ORM\Lazy
+     * @Extbase\ORM\Cascade("remove")
      */
     protected $images = null;
 
     /**
      * @var \OliverHader\CarRentalB\Domain\Model\Common\Brand
+     * @Extbase\ORM\Lazy
      */
     protected $brand = null;
 
@@ -50,7 +53,7 @@ class Car extends AbstractEntity implements CarInterface
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OliverHader\CarRentalB\Domain\Model\Rental\Rental>
-     * @cascade remove
+     * @Extbase\ORM\Cascade("remove")
      */
     protected $rentals = null;
 
@@ -149,9 +152,10 @@ class Car extends AbstractEntity implements CarInterface
     /**
      * @return \OliverHader\CarRentalB\Domain\Model\Common\Brand
      */
-    public function getBrand(): \OliverHader\CarRentalB\Domain\Model\Common\Brand
+    public function getBrand()
     {
-        return $this->brand;
+        // @todo Fluid's VariableExtractor does not know the concept of Extbase's LazyLoadingProxy magic
+        return $this->brand->_loadRealInstance();
     }
 
     /**

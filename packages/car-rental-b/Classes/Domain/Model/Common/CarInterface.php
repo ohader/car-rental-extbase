@@ -21,5 +21,5 @@ interface CarInterface
 {
     public function getVin(): string;
     public function getColor(): string;
-    public function getBrand(): Brand;
+    public function getBrand();
 }
