@@ -68,7 +68,7 @@ class Maintenance extends AbstractEntity
      * @param \OliverHader\CarRentalA\Domain\Model\Mechanic $mechanic
      * @return void
      */
-    public function setCustomer(\OliverHader\CarRentalA\Domain\Model\Mechanic $mechanic)
+    public function setMechanic(\OliverHader\CarRentalA\Domain\Model\Mechanic $mechanic)
     {
         $this->mechanic = $mechanic;
     }

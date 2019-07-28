@@ -265,7 +265,7 @@ class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \OliverHader\CarRentalA\Domain\Model\Maintenance $maintenance
      * @return void
      */
-    public function addMaintenance(\OliverHader\CarRentalA\Domain\Model\Rental $maintenance)
+    public function addMaintenance(\OliverHader\CarRentalA\Domain\Model\Maintenance $maintenance)
     {
         $this->maintenances->attach($maintenance);
     }
