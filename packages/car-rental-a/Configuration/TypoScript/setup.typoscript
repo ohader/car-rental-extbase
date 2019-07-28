@@ -2,19 +2,19 @@ config.tx_extbase.persistence.classes {
     OliverHader\CarRentalA\Domain\Model\Agent {
         mapping {
             tableName = fe_users
-            recordType = OliverHader\CarRentalA\Domain\Model\Agent
+            recordType = car-rental-agent
         }
     }
     OliverHader\CarRentalA\Domain\Model\Customer {
         mapping {
             tableName = fe_users
-            recordType = OliverHader\CarRentalA\Domain\Model\Customer
+            recordType = car-rental-customer
         }
     }
     OliverHader\CarRentalA\Domain\Model\Mechanic {
         mapping {
             tableName = fe_users
-            recordType = OliverHader\CarRentalA\Domain\Model\Mechanic
+            recordType = car-rental-mechanic
         }
     }
 }

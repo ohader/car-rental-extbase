@@ -1,31 +1,31 @@
 mod {
     wizards.newContentElement.wizardItems.plugins {
         elements {
-            information {
+            information-a {
                 iconIdentifier = car_rental_a-plugin-information
                 title = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_a_information.name
                 description = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_a_information.description
                 tt_content_defValues {
                     CType = list
-                    list_type = carrental_information
+                    list_type = carrentala_information
                 }
             }
-            rent {
+            rent-a {
                 iconIdentifier = car_rental_a-plugin-rental
                 title = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_a_rental.name
                 description = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_a_rental.description
                 tt_content_defValues {
                     CType = list
-                    list_type = carrental_rental
+                    list_type = carrentala_rental
                 }
             }
-            management {
+            management-a {
                 iconIdentifier = car_rental_a-plugin-management
                 title = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_a_management.name
                 description = LLL:EXT:car_rental_a/Resources/Private/Language/locallang_db.xlf:tx_car_rental_a_management.description
                 tt_content_defValues {
                     CType = list
-                    list_type = carrental_management
+                    list_type = carrentala_management
                 }
             }
         }
