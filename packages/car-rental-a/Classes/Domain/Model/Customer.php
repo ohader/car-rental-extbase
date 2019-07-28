@@ -1,6 +1,8 @@
 <?php
 namespace OliverHader\CarRentalA\Domain\Model;
 
+use TYPO3\CMS\Extbase\Domain\Model\FrontendUser;
+
 /***
  *
  * This file is part of the "Car Rental" Extension for TYPO3 CMS.
@@ -15,6 +17,6 @@ namespace OliverHader\CarRentalA\Domain\Model;
 /**
  * Customer
  */
-class Customer extends Employee
+class Customer extends FrontendUser
 {
 }

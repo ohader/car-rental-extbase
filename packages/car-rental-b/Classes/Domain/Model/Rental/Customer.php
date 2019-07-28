@@ -1,7 +1,7 @@
 <?php
 namespace OliverHader\CarRentalB\Domain\Model\Rental;
 
-use OliverHader\CarRentalB\Domain\Model\Common\Employee;
+use TYPO3\CMS\Extbase\Domain\Model\FrontendUser;
 
 /***
  *
@@ -17,6 +17,6 @@ use OliverHader\CarRentalB\Domain\Model\Common\Employee;
 /**
  * Customer
  */
-class Customer extends Employee
+class Customer extends FrontendUser
 {
 }
