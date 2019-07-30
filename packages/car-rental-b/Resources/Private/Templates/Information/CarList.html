@@ -48,9 +48,9 @@
 						rent
 					</f:link.action>
 					<f:security.ifHasRole role="Mechanic">
-						<f:link.action pluginName="Information" controller="Car" action="showMaintenance"
+						<f:link.action pluginName="Maintenance" controller="Maintenance" action="carList"
 									   arguments="{car:car}" class="btn btn-default">
-							maintenance
+							car maintenance
 						</f:link.action>
 					</f:security.ifHasRole>
 				</div>

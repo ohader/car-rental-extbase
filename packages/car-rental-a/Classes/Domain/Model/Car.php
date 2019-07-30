@@ -1,6 +1,8 @@
 <?php
 namespace OliverHader\CarRentalA\Domain\Model;
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+
 /***
  *
  * This file is part of the "Car Rental" Extension for TYPO3 CMS.
@@ -15,7 +17,7 @@ namespace OliverHader\CarRentalA\Domain\Model;
 /**
  * Car
  */
-class Car extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Car extends AbstractEntity
 {
     /**
      * @var string

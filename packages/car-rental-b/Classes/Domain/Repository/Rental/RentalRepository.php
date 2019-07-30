@@ -8,7 +8,6 @@ namespace OliverHader\CarRentalB\Domain\Repository\Rental;
  * LICENSE.txt file that was distributed with this source code.
  ***/
 
-use OliverHader\CarRentalB\Domain\Model\Common\Brand;
 use OliverHader\CarRentalB\Domain\Model\Rental\Car;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;

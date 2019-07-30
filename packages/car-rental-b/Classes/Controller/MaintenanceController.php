@@ -15,49 +15,39 @@ namespace OliverHader\CarRentalB\Controller;
 use OliverHader\CarRentalB\Domain\Model\Rental;
 use OliverHader\CarRentalB\Domain\Model\Maintenance;
 use OliverHader\CarRentalB\Domain\Repository\Maintenance\MaintenanceRepository;
-use OliverHader\CarRentalB\Domain\Repository\Rental\CarRepository;
-use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
- * CarController
+ * InformationController
  */
-class CarController extends ActionController
+class MaintenanceController extends ActionController
 {
     /**
-     * @return void
+     * @var MaintenanceRepository
      */
-    public function listAction()
-    {
-        $cars = $this->getCarRepository()->findAll();
-        $this->view->assign('cars', $cars);
-    }
+    protected $maintenanceRepository;
 
     /**
-     * @param Rental\Car $car
-     * @return void
+     * @param Maintenance\Car $car
+     * @param \DateTimeInterface|null $issueDate
      */
-    public function showAction(Rental\Car $car)
+    public function newAction(Maintenance\Car $car, \DateTimeInterface $issueDate = null)
     {
-        $this->view->assign('car', $car);
+        $maintenance = $this->objectManager->get(Maintenance\Maintenance::class);
+        $maintenance->setCar($car);
+        $maintenance->setMechanic($this->getCurrentMechanic());
+        $maintenance->setIssueDate($issueDate);
+        // ...
     }
 
     /**
      * @param Maintenance\Car $car
      * @return void
      */
-    public function showMaintenanceAction(Maintenance\Car $car)
+    public function carListAction(Maintenance\Car $car)
     {
         $this->view->assign('car', $car);
         $this->view->assign('maintenances', $this->getMaintenanceRepository()->findByCar($car));
-    }
-
-    /**
-     * @return CarRepository
-     */
-    protected function getCarRepository(): CarRepository
-    {
-        return $this->objectManager->get(CarRepository::class);
     }
 
     /**
@@ -65,6 +55,7 @@ class CarController extends ActionController
      */
     protected function getMaintenanceRepository(): MaintenanceRepository
     {
-        return $this->objectManager->get(MaintenanceRepository::class);
+        return $this->maintenanceRepository
+            ?? $this->maintenanceRepository = $this->objectManager->get(MaintenanceRepository::class);
     }
 }

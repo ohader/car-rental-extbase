@@ -18,42 +18,29 @@ config.tx_extbase.persistence.classes {
         }
     }
 
+    // common boundary
     OliverHader\CarRentalB\Domain\Model\Common\Brand {
-        mapping {
-            tableName = tx_carrentalb_domain_model_brand
-        }
+        mapping.tableName = tx_carrentalb_domain_model_brand
     }
-
+    // maintenance boundary
     OliverHader\CarRentalB\Domain\Model\Maintenance\Car {
-        mapping {
-            tableName = tx_carrentalb_domain_model_car
-        }
+        mapping.tableName = tx_carrentalb_domain_model_car
     }
     OliverHader\CarRentalB\Domain\Model\Maintenance\Maintenance {
-        mapping {
-            tableName = tx_carrentalb_domain_model_maintenance
-        }
+        mapping.tableName = tx_carrentalb_domain_model_maintenance
     }
     OliverHader\CarRentalB\Domain\Model\Maintenance\Tire {
-        mapping {
-            tableName = tx_carrentalb_domain_model_tire
-        }
+        mapping.tableName = tx_carrentalb_domain_model_tire
     }
-
+    // rental boundary
     OliverHader\CarRentalB\Domain\Model\Rental\Car {
-        mapping {
-            tableName = tx_carrentalb_domain_model_car
-        }
+        mapping.tableName = tx_carrentalb_domain_model_car
     }
     OliverHader\CarRentalB\Domain\Model\Rental\Charge {
-        mapping {
-            tableName = tx_carrentalb_domain_model_charge
-        }
+        mapping.tableName = tx_carrentalb_domain_model_charge
     }
     OliverHader\CarRentalB\Domain\Model\Rental\Rental {
-        mapping {
-            tableName = tx_carrentalb_domain_model_rental
-        }
+        mapping.tableName = tx_carrentalb_domain_model_rental
     }
 }
 

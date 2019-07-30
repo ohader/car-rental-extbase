@@ -4,40 +4,29 @@ defined('TYPO3_MODE') || die('Access denied.');
 call_user_func(
     function()
     {
-        // configure Extbase plugin, used to control MVC dispatcher logic
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'OliverHader.CarRentalB',
             'Information',
-            [
-                'Car' => 'list, show, showMaintenance'
-            ],
-            // non-cacheable actions
-            [
-                'Car' => ''
-            ]
+            ['Information' => 'carList, carDetail, carSearch'],
+            ['Information' => 'carSearch']
         );
-        // configure Extbase plugin, used to control MVC dispatcher logic
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'OliverHader.CarRentalB',
-            'Rental',
-            [
-                'Rental' => 'list, new, create, delete, notLoggedInError'
-            ],
-            // non-cacheable actions
-            [
-                'Rental' => 'list, new, create, delete'
-            ]
+            'Checkout',
+            ['Rental' => 'dashboard, rent, confirmRent, cancel, confirmCancel'],
+            ['Rental' => '']
         );
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'OliverHader.CarRentalB',
             'Management',
-            [
-                'Management' => 'list, show, edit, update, delete, status'
-            ],
-            // non-cacheable actions
-            [
-                'Management' => 'edit, update, delete, status'
-            ]
+            ['Management' => 'list, show, edit, update, delete, status'],
+            ['Management' => 'edit, update, delete, status']
+        );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'OliverHader.CarRentalB',
+            'Maintenance',
+            ['Maintenance' => 'dashboard, list, show, new, create, carList'],
+            ['Maintenance' => 'add, create']
         );
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'OliverHader.CarRentalB',
