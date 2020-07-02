@@ -134,7 +134,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'fe_users',
-                'foreign_table_where' => 'AND fe_users.tx_extbase_type="' . str_replace('\\', '\\\\', \OliverHader\CarRentalB\Domain\Model\Mechanic::class) . '"',
+                'foreign_table_where' => 'AND fe_users.tx_extbase_type="car-rental-mechanic"',
                 'minitems' => 0,
                 'maxitems' => 1,
             ],
