@@ -23,13 +23,13 @@ class Car extends AbstractEntity implements CarInterface
 {
     /**
      * @var string
-     * @validate NotEmpty
+     * @Extbase\Validate("NotEmpty")
      */
     protected $vin = '';
 
     /**
      * @var string
-     * @validate NotEmpty
+     * @Extbase\Validate("NotEmpty")
      */
     protected $color = '';
 

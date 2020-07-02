@@ -1,6 +1,7 @@
 <?php
 namespace OliverHader\CarRentalB\Domain\Model\Maintenance;
 
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /***
@@ -23,7 +24,7 @@ class Tire extends AbstractEntity
      * Tread Depth
      *
      * @var float
-     * @validate NotEmpty
+     * @Extbase\Validate("NotEmpty")
      */
     protected $treadDepth = 0.0;
 
@@ -31,7 +32,7 @@ class Tire extends AbstractEntity
      * Pressure (bar)
      *
      * @var float
-     * @validate NotEmpty
+     * @Extbase\Validate("NotEmpty")
      */
     protected $pressure = 0.0;
 

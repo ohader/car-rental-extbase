@@ -2,6 +2,7 @@
 namespace OliverHader\CarRentalB\Domain\Model\Maintenance;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 
@@ -38,7 +39,7 @@ class Maintenance extends AbstractEntity
      * Start date
      *
      * @var \DateTime
-     * @validate NotEmpty
+     * @Extbase\Validate("NotEmpty")
      */
     protected $issueDate = null;
 

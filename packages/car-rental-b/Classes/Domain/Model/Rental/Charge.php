@@ -1,6 +1,7 @@
 <?php
 namespace OliverHader\CarRentalB\Domain\Model\Rental;
 
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /***
@@ -21,13 +22,13 @@ class Charge extends AbstractEntity
 {
     /**
      * @var string
-     * @validate NotEmpty
+     * @Extbase\Validate("NotEmpty")
      */
     protected $name = '';
 
     /**
      * @var float
-     * @validate NotEmpty
+     * @Extbase\Validate("NotEmpty")
      */
     protected $price = 0.0;
 

@@ -16,5 +16,10 @@
         "psr-4": {
             "OliverHader\\CarRentalB\\": "Classes"
         }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "car_rental_b"
+        }
     }
 }

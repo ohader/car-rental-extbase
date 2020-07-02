@@ -1,6 +1,7 @@
 <?php
 namespace OliverHader\CarRentalB\Domain\Model\Common;
 
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /***
@@ -21,7 +22,7 @@ class Brand extends AbstractEntity
 {
     /**
      * @var string
-     * @validate NotEmpty
+     * @Extbase\Validate("NotEmpty")
      */
     protected $name = '';
 

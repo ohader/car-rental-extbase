@@ -136,7 +136,7 @@ return [
         'images' => [
             'exclude' => true,
             'label' => 'LLL:EXT:car_rental_b/Resources/Private/Language/locallang_db.xlf:tx_carrentalb_domain_model_car.images',
-            'config' => 
+            'config' =>
             \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'images',
                 [
@@ -186,6 +186,7 @@ return [
             'label' => 'LLL:EXT:car_rental_b/Resources/Private/Language/locallang_db.xlf:tx_carrentalb_domain_model_car.brand',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_carrentalb_domain_model_brand',
                 'minitems' => 0,
                 'maxitems' => 1,
@@ -196,6 +197,7 @@ return [
             'label' => 'LLL:EXT:car_rental_b/Resources/Private/Language/locallang_db.xlf:tx_carrentalb_domain_model_car.charge',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_carrentalb_domain_model_charge',
                 'minitems' => 0,
                 'maxitems' => 1,

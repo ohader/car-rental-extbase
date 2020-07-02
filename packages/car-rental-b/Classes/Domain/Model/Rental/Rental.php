@@ -1,6 +1,7 @@
 <?php
 namespace OliverHader\CarRentalB\Domain\Model\Rental;
 
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /***
@@ -17,13 +18,13 @@ class Rental extends AbstractEntity
 {
     /**
      * @var \DateTime
-     * @validate NotEmpty
+     * @Extbase\Validate("NotEmpty")
      */
     protected $startDate = null;
 
     /**
      * @var \DateTime
-     * @validate NotEmpty
+     * @Extbase\Validate("NotEmpty")
      */
     protected $endDate = null;
 
